@@ -1,0 +1,45 @@
+---
+# base layout for other item display_template layouts
+# adds breadcrumbs and title at top; citation box, rights box, and browse buttons at bottom
+layout: default
+# item-meta adds rich meta markup to the page on production build
+item-meta: true
+---
+<div class="container py-3">
+
+    {% include item/vocab-breadcrumbs.html %}
+    <h2 class="mb-3">{{ page.title }} 
+        <!--<a href="#terms" class="ms-5 btn btn-sm btn-outline-dark small">Related Terms 
+            <svg class="bi icon-sprite" role="img" aria-label="Jump to Related Terms">
+                <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#arrow-down"/>
+            </svg>
+        </a>-->
+    </h2>
+
+    <div class="row justify-content-center pt-3 pb-4 gx-5">
+        <div class="col-sm-6">
+
+            <h3>Description</h3>
+            <p>{{ page.description }}</p>
+            <p><a class="btn btn-outline-secondary btn-lg" href="{{ '/browse.html#' | append: page.title | relative_url }}">Browse Terms</a></p>
+
+        </div>
+
+        <div class="col-sm-6" id="terms">
+
+            <h3>Related Terms</h3>
+            <ul>
+                {%- for item in site.data[site.metadata] -%}
+                {%- if item.vocabulary == page.title -%}
+                <li><a href="{{ '/items/' | append: item.objectid | append: '.html' | relative_url }}">{{ item.title }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="text-center">
+        <a class="btn btn-secondary" href="{{ '/vocab/' | relative_url }}" role="button">&laquo; Vocabulary</a>
+    </div>
+</div>
