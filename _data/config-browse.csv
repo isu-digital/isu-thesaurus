@@ -1,6 +1,7 @@
 field,display_name,btn,hidden,sort_name
-date,Date,,,Date
+preferred_form,Preferred Form
+vocabulary,Vocabulary
 creator,Creator,,,
-subject,,true
-location,,true
-identifier,,,true,Identifier
+location,Location,true
+identifier,Identifier,,,Identifier
+type,Type,true

@@ -1,5 +1,5 @@
 field,display_name
 title,Title
-date,Date
+vocabulary,Vocabulary
 description,Description
-subject,Subjects
+type,Type

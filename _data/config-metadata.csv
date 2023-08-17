@@ -1,14 +1,16 @@
 field,display_name,browse_link,external_link,dc_map,schema_map
 title,Title,,,DCTERMS.title,headline
+preferred_form,Preferred Form
+vocabulary,Vocabulary
+alternative_form,Alternative Form
+dates,Dates
+broader_term,Broader Term
+narrower_term,Narrower Term
+close_match,Close Match
+related_term,Related Term
 creator,Creator,,,DCTERMS.creator,creator
-date,Date Created,,,DCTERMS.date,dateCreated
 description,Description,,,DCTERMS.description,description
-subject,Subjects,true,,DCTERMS.subject,keywords
-location,Location,,,,contentLocation
-latitude,Latitude,,,,
-longitude,Longitude,,,,
-source,Source,,,,
+location,Location,true,,,contentLocation
+language,Language
 identifier,Source Identifier,,,,
-type,Type,,,DCTERMS.type,
-format,Format,,,,encodingFormat
-rightsstatement,,,,DCTERMS.rights,license
+type,Type,true,,DCTERMS.type,
