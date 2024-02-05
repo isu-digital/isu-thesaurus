@@ -1,0 +1,83 @@
+{
+    "@context": {
+        "dc": "http://purl.org/dc/terms/",
+        "madsrdf": "http://www.loc.gov/mads/rdf/v1#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "schema": "http://schema.org/",
+        "skos": "http://www.w3.org/2004/02/skos/core#"
+    },
+    "rdf:type": "skos:Concept",
+    "rdf:type": "madsrdf:Authority",
+    "skos:prefLabel": "{{ page.pref_label }}",
+    "dc:type": "http://purl.org/dc/dcmitype/{{ page.type }}",
+    "dc:identifier": "{{ page.objectid }}",
+    "dc:title": "{{ page.title }}",
+    "rdf:type": [{% for t in page.term_type_uri %}
+                 "{{ t }}"
+                    {%- if forloop.last == false -%}
+                    ,
+                    {%- endif -%}
+                 {% endfor %}],
+    "dc:identifier": "{{ page.uri }}",
+    "skos:inScheme": "{{ page.vocabulary_uri }}",
+    "skos:definition": "{{ page.definition }}",
+    "skos:scopeNote": "{{ page.usage }}",
+    "skos:historyNote": "{{ page.history }}",
+    "skos:altLabel": [{% for alt in page.alternative_form %}
+                      "{{ alt }}",
+                        {%- if forloop.last == false -%}
+                        ,
+                       {%- endif -%}
+                      {% endfor %}],
+    "skos:broader": "{{ page.broader_term_uri }}",
+    "skos:narrower": [{% for term in page.narrower_term_uri %}
+                      "{{term}}",
+                        {%- if forloop.last == false -%}
+                        ,
+                        {%- endif -%}
+                      {% endfor %}],
+    "skos:closeMatch": [{% for term in page.close_match_uri %}
+                      "{{term}}",
+                        {%- if forloop.last == false -%}
+                        ,
+                        {%- endif -%}
+                        {% endfor %}],
+    "skos:exactMatch": "{{ page.exact_match_uri }}",
+    "skos:related": [{% for community in page.communities_uri %}
+                     "{{community}}",
+                     {%- if forloop.last == false -%}
+                     ,
+                     {%- endif -%}
+                     {% endfor %}],
+    "skos:related": [{% for term in page.related_term_uri %}
+                     "{{term}}",
+                     {%- if forloop.last == false -%}
+                     ,
+                     {%- endif -%}
+                     {% endfor %}],
+    "madsrdf:associatedLocale": [{% for place in page.location_uri %}
+                                 "{{ place }}"
+                                 {%- if forloop.last == false -%}
+                                 ,
+                                 {%- endif -%}
+                                 {% endfor %}],
+    "madsrdf:associatedLanguage": [{% for lang in page.language %}
+                                   "{{ page.lang }}"
+                                    {%- if forloop.last == false -%}
+                                    ,
+                                    {%- endif -%}
+                                   {% endfor %}],
+    "madsrdf:establishDate": "{{ page.establish_date }}",
+    "madsrdf:terminateDate": "{{ page.terminate_date }}",
+    "madsrdf:birthDate": "{{ page.birth_date }}",
+    "madsrdf:deathDate": "{{ page.death_date }}",
+    "madsrdf:hasSource": [{% for s in page.source %}
+                          "{{ s }}"
+                          {%- if forloop.last == false -%}
+                          ,
+                          {%- endif -%}
+                          {% endfor %}
+    ],
+    "dc:publisher": "{{ page.publisher_uri }}",
+    "dc:rights": "{{ page.rights }}"
+}
