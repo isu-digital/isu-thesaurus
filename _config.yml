@@ -34,11 +34,11 @@ author: owikle
 #
 # Set the metadata for your collection (the name of the CSV file in your _data directory that describes the objects in your collection) 
 # Use the filename of your CSV **without** the ".csv" extension! E.g. _data/demo-metadata.csv --> "demo-metadata"
-metadata: linked-data-vocab-CB-metadata 
+metadata: isu-vocab-cb-csv
 # page generation settings [optional!]
 # [optional: only used if you need to tweak CB defaults or generate from more than one data file]
 page_gen:
-  - data: 'linked-data-vocab-CB-metadata'
+  - data: 'isu-vocab-cb-csv'
     template: 'item'
     name: 'objectid'
     dir: 'items'
