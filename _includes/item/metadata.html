@@ -8,6 +8,93 @@
 <div id="item-metadata">
     <dl>
         {% for f in fields %}{% if page[f.field] %}
+        {% if f.field == "vocabulary" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+        <a class="me-1" href="{{ page.vocabulary | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ page.vocabulary | strip }}</a>
+        <a class="btn btn-primary" href="{{ page.vocabulary_uri }}" role="button">
+            {% include feature/icon.html icon="link-45deg" label="external link" %}
+        </a>
+        </dd>
+        {% elsif f.field == "term_type" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.term_type | split: ";" %}
+            {% assign term_uris = page.term_type_uri | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
+            <a class="btn btn-primary me-3" href="{{ term_uris[index] }}" role="button" target="_blank" rel="noopener">
+                {% include feature/icon.html icon="link-45deg" label="external link" %}
+            </a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "close_match" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.close_match | split: ";" %}
+            {% assign term_uris = page.close_match_uri | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
+            <a class="btn btn-primary me-3" href="{{ term_uris[index] }}" role="button" target="_blank" rel="noopener">
+                {% include feature/icon.html icon="link-45deg" label="external link" %}
+            </a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "exact_match" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.exact_match | split: ";" %}
+            {% assign term_uris = page.exact_match_uri | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
+            <a class="btn btn-primary me-3" href="{{ term_uris[index] }}" role="button" target="_blank" rel="noopener">
+                {% include feature/icon.html icon="link-45deg" label="external link" %}
+            </a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "communities" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.communities | split: ";" %}
+            {% assign term_uris = page.communities_uri | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
+            <a class="btn btn-primary me-3" href="{{ term_uris[index] }}" role="button" target="_blank" rel="noopener">
+                {% include feature/icon.html icon="link-45deg" label="external link" %}
+            </a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "location" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.location | split: ";" %}
+            {% assign term_uris = page.location_uri | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
+            <a class="btn btn-primary me-3" href="{{ term_uris[index] }}" role="button" target="_blank" rel="noopener">
+                {% include feature/icon.html icon="link-45deg" label="external link" %}
+            </a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "publisher" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.publisher | split: ";" %}
+            {% assign term_uris = page.publisher_uri | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
+            <a class="btn btn-primary me-3" href="{{ term_uris[index] }}" role="button" target="_blank" rel="noopener">
+                {% include feature/icon.html icon="link-45deg" label="external link" %}
+            </a>
+            {% endfor %}
+        </dd>
+        {% else %}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
             {% if f.browse_link == "true" %}
@@ -20,6 +107,6 @@
             {% else %}
             {{ page[f.field] | replace: '""','"' }}{% endif %}
         </dd>
-        {% endif %}{% endfor %}
+        {% endif %}{% endif %}{% endfor %}
     </dl>
 </div>
