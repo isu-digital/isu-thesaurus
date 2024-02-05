@@ -1,16 +1,23 @@
 field,display_name,browse_link,external_link,dc_map,schema_map
-title,Title,,,DCTERMS.title,headline
-preferred_form,Preferred Form
-vocabulary,Vocabulary
-alternative_form,Alternative Form
-dates,Dates
-broader_term,Broader Term
-narrower_term,Narrower Term
-close_match,Close Match
-related_term,Related Term
-creator,Creator,,,DCTERMS.creator,creator
-description,Description,,,DCTERMS.description,description
-location,Location,true,,,contentLocation
-language,Language
-identifier,Source Identifier,,,,
-type,Type,true,,DCTERMS.type,
+title,Preferred form,,,DCTERMS.title,headline
+term_type,Term type,true,,
+vocabulary,Vocabulary,true,,
+definition,Definition
+usage,Usage
+history,History
+alternative_form,Alternative forms
+broader_term,Broader term,true
+narrower_term,Narrower term,true
+close_match,Close match,true
+exact_match,Exact match
+related_term,Related terms,true
+communities,Associated communities
+location,Associated locations,true,,,contentLocation
+language,Language of term
+establish_date,Start date
+terminate_date,End date
+birth_date,Birth date
+death_date,Death date
+source,Source
+publisher,Publisher,true,,DCTERMS.publisher
+rights,Rights,,true,DCTERMS.rights
