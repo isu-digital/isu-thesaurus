@@ -94,6 +94,32 @@
             </a>
             {% endfor %}
         </dd>
+        {% elsif f.field == "broader_term" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.broader_term | split: ";" %}
+            {% assign term_uris = page.broader_term_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
+            <a class="btn btn-primary me-3" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}" role="button">
+                {% include feature/icon.html icon="link-45deg" label="external link" %}
+            </a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "narrower_term" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.narrower_term | split: ";" %}
+            {% assign term_uris = page.narrower_term_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
+            <a class="btn btn-primary me-3" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}" role="button">
+                {% include feature/icon.html icon="link-45deg" label="external link" %}
+            </a>
+            {% endfor %}
+        </dd>
         {% else %}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
