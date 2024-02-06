@@ -1,5 +1,5 @@
 field,display_name
 title,Title
 vocabulary,Vocabulary
-description,Description
-type,Type
+term_type,Term Type
+usage,Usage
