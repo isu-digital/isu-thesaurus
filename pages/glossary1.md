@@ -30,7 +30,7 @@ Test glossary of terms, with links out to each term's item page. (This is just a
 {%- if x == letter -%}
     <dt class="glossary-def"><a href="{{ '/items/' | append: item.objectid | append: '.html' | relative_url }}">
     {{ item.title }}</a></dt> 
-    <dd>- {{ item.description }}</dd>
+    <dd>{{ item.definition }}</dd>
 {%- endif -%}
 {%- endfor -%}
 </dl>

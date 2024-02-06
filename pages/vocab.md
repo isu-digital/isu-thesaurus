@@ -30,7 +30,7 @@ Test glossary of vocabulary sources, which links out to a page for each source.
 {%- if x == letter -%}
     <dt class="glossary-def"><a href="{{ '/vocab/' | append: item.objectid | append: '.html' | relative_url }}">
     {{ item.title }}</a></dt> 
-    <dd>- {{ item.description }}</dd>
+    <dd>{{ item.description }}</dd>
 {%- endif -%}
 {%- endfor -%}
 </dl>
