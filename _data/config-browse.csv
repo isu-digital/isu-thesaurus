@@ -1,7 +1,10 @@
 field,display_name,btn,hidden,sort_name
-preferred_form,Preferred Form
-vocabulary,Vocabulary
-creator,Creator,,,
-location,Location,true
-identifier,Identifier,,,Identifier
-type,Type,true
+usage,Usage
+term_type,Term type,true,,
+alternative_form,Alternative forms,true
+broader_term,Broader term,true
+narrower_term,Narrower term,true
+close_match,Close match,true
+related_term,Related terms,true
+communities,Associated communities,true
+publisher,Publisher,true,
