@@ -1,7 +1,7 @@
 ---
 title: Glossary
 layout: page
-permalink: /glossary1.html
+permalink: /terms.html
 ---
 
 # Glossary
