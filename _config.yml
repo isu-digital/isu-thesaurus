@@ -18,12 +18,12 @@ source-code: https://github.com/CollectionBuilder/collectionbuilder-csv
 # SITE SETTINGS
 #
 # title of site appears in banner
-title: ISU Linked Data Vocabulary
+title: Iowa State University Library Vocabularies
 # tagline, a short phrase that will appear throughout the site in the top banner
-tagline: Lorem ipsum dolor sit amet
+tagline: Local LOVe—Linked Open Vocabularies for local resource description
 # description appears in meta tags and other locations
 # this description might appear in search result lists, keep around 160 characters max
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+description: "Curated lists of preferred subject headings, genre terms, names, and other concepts used to describe resources created by and about the Iowa State University community"
 # keywords, a short list of subjects describing the collection, separated by semicolon, to appear in rich markup
 keywords: iowa;linked data
 # creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name
