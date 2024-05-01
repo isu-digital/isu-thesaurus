@@ -7,14 +7,15 @@
 {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display_name != nil' -%}
 <div id="item-metadata">
     <dl>
+        <dt class="field">URI:</dt>
+        <dd class="field-value">
+            <a class="me-3" href="{{ page.objectid | prepend: 'items/' | append: '.html' | absolute_url }}">{{ page.objectid | prepend: 'items/' | absolute_url }}</a>
+        </dd>
         {% for f in fields %}{% if page[f.field] %}
         {% if f.field == "vocabulary" %}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
-        <a class="me-1" href="{{ page.vocabulary | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ page.vocabulary | strip }}</a>
-        <a class="btn btn-primary" href="{{ page.vocabulary_uri }}" role="button">
-            {% include feature/icon.html icon="link-45deg" label="external link" %}
-        </a>
+        <a class="me-1" href="{% if page.vocabulary_uri contains 'iastate.edu' %}{% assign parts = page.vocabulary_uri | split: '/vocabs' %}{{ parts[1] | relative_url }}{% else %}{{ page.vocabulary_uri }}{% endif %}">{{ page.vocabulary | strip }}</a>
         </dd>
         {% elsif f.field == "term_type" %}
         <dt class="field">{{ f.display_name }}:</dt>
