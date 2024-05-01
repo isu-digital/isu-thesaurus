@@ -1,0 +1,24 @@
+property-label,property-uri,value
+URI,http://purl.org/dc/terms/identifier,Uniform resource identifier (URI) for the preferred term.
+Preferred form,http://purl.org/dc/terms/title,Form of the term recommended for use by Iowa State metadata creators.
+Term type,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,"Type of term (all are an instance of the MADS/RDF Authority class, plus Topic, GenreForm, or Name, as applicable)."
+Vocabulary,http://www.w3.org/2004/02/skos/core#inScheme,"Title of the source vocabulary, or scheme of terms to which the term belongs."
+Definition,http://www.w3.org/2004/02/skos/core#definition,Explanatory or contextual information about the term.
+Usage,http://www.w3.org/2004/02/skos/core#scopeNote,Notes on how and when the term should be applied.
+History,http://www.w3.org/2004/02/skos/core#historyNote,"Outreach and approval status and dates, or other notes about changes made to the term."
+Alternative forms,http://www.w3.org/2004/02/skos/core#altLabel,Variant forms of the term provided for discovery.
+Broader term,http://www.w3.org/2004/02/skos/core#broader,Broader or more general terms in the vocabulary hierarchy.
+Narrower term,http://www.w3.org/2004/02/skos/core#narrower,Narrower or more specific terms in the vocabulary hierarchy.
+Close match,http://www.w3.org/2004/02/skos/core#closeMatch,Terms in an external vocabulary that refer to a similar concept but have a different form or usage than the locally preferred term.
+Exact match,http://www.w3.org/2004/02/skos/core#exactMatch,Term in an external vocabulary selected for use by local metadata creators. The form and usage of the term have not been modified.
+Related terms,http://www.w3.org/2004/02/skos/core#related,Terms in the local vocabulary that should be assigned together or reviewed to ensure the best selection.
+Associated communities,http://www.w3.org/2004/02/skos/core#related,Tribal nations or communities associated with the term.
+Associated locations,http://www.loc.gov/mads/rdf/v1#associatedLocale,Geographic locations associated with the term.
+Language of term,http://www.loc.gov/mads/rdf/v1#associatedLanguage,Language of origin of the term.
+Start date,http://www.loc.gov/mads/rdf/v1#establishDate,Year when the entity represented by the term was established.
+End date,http://www.loc.gov/mads/rdf/v1#terminateDate,Year when the entity represented by the term was terminated.
+Birth date,http://www.loc.gov/mads/rdf/v1#birthDate,Year when the person represented by the term was born.
+Death date,http://www.loc.gov/mads/rdf/v1#deathDate,Year when the person represented by the term died.
+Source,http://www.loc.gov/mads/rdf/v1#hasSource,Name or website of the source for the preferred term.
+Publisher,http://purl.org/dc/terms/publisher,"Entity responsible for making the term available. For locally preferred terms, the publisher is Iowa State University Library; for terms selected from an external vocabulary, the publisher is the agency that maintains the vocabulary."
+Rights,http://purl.org/dc/terms/rights,"Information about rights held in and over the contents of the item page, which is metadata about the vocabulary term. This website uses the Open Data Commons Public Domain Dedication and Licence (PDDL), which allows free sharing, modification, and use of this metadata for any purpose and without any restrictions."
