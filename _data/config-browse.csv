@@ -8,3 +8,4 @@ close_match,Close match,true
 related_term,Related terms,true
 communities,Associated communities,true
 publisher,Publisher,true,
+location,,,true
