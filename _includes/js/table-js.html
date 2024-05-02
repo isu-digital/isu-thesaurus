@@ -21,7 +21,7 @@ $(document).ready( function () {
             // turn relative link into absolute
             { "render": function ( data ) { return '{{ "/" | relative_url }}' + data; },"targets": {{ fcount }} },
             // combine link with first column
-            { "render": function ( data, type, row ) { return '<a href="' + row['{{ fcount }}'] +'">'+ data +'</a>'; },"targets": 0 },
+            { "render": function ( data, type, row ) { return '<a href="' + row['{{ fcount | minus: 1 }}'] +'">'+ data +'</a>'; },"targets": [0, 4] },
             // hide the link column
             { "visible": false,  "targets": [ {{ fcount }} ] }
         ],
