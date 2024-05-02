@@ -102,10 +102,7 @@
             {% assign term_uris = page.broader_term_objectid | split: ";" %}
             {% for t in terms %}
             {% assign index = forloop.index | minus: 1 %}
-            <a class="me-1" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
-            <a class="btn btn-primary me-3" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}" role="button">
-                {% include feature/icon.html icon="link-45deg" label="external link" %}
-            </a>
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
         {% elsif f.field == "narrower_term" %}
@@ -115,10 +112,17 @@
             {% assign term_uris = page.narrower_term_objectid | split: ";" %}
             {% for t in terms %}
             {% assign index = forloop.index | minus: 1 %}
-            <a class="me-1" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
-            <a class="btn btn-primary me-3" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}" role="button">
-                {% include feature/icon.html icon="link-45deg" label="external link" %}
-            </a>
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "related_term" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.related_term | split: ";" %}
+            {% assign term_uris = page.related_term_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
         {% else %}
