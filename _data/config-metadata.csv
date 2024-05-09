@@ -1,6 +1,5 @@
 field,display_name,browse_link,external_link,dc_map,schema_map
 title,Preferred form,,,DCTERMS.title,headline
-term_type,Term type,true,,
 vocabulary,Vocabulary,true,,
 definition,Definition
 usage,Usage
@@ -8,16 +7,17 @@ history,History
 alternative_form,Alternative forms
 broader_term,Broader term,true
 narrower_term,Narrower term,true
-close_match,Close match,true
-exact_match,Exact match
 related_term,Related terms,true
+source,Source
+language,Language of term
+exact_match,Exact match
+close_match,Close match,true
 communities,Associated communities
 location,Associated locations,true,,,contentLocation
-language,Language of term
 establish_date,Start date
 terminate_date,End date
 birth_date,Birth date
 death_date,Death date
-source,Source
+term_type,Term type,true,,
 publisher,Publisher,true,,DCTERMS.publisher
 rights,Rights,,true,DCTERMS.rights
