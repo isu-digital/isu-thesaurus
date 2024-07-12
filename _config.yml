@@ -20,7 +20,7 @@ source-code: https://github.com/CollectionBuilder/collectionbuilder-csv
 # title of site appears in banner
 title: Iowa State University Library Vocabularies
 # tagline, a short phrase that will appear throughout the site in the top banner
-tagline: Local LOVe—Linked Open Vocabularies for local resource description
+tagline: Linked data vocabularies for local resource description
 # description appears in meta tags and other locations
 # this description might appear in search result lists, keep around 160 characters max
 description: "Curated lists of preferred subject headings, genre terms, names, and other concepts used to describe resources created by and about the Iowa State University community"
