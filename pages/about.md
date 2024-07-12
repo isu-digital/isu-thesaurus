@@ -14,7 +14,7 @@ credits: true
 
 ## Summary
 
-The Iowa State University Library vocabularies are curated lists of preferred subject headings, genre terms, names, and other concepts used to describe resources created by and about the Iowa State University community. Each term has a structured authority record containing a uniform resource identifier (URI) and contextual information, including links to related concepts if applicable.
+The Iowa State University Library Vocabularies (ISULV) are curated lists of preferred subject headings, genre terms, names, and other concepts used to describe resources created by and about the Iowa State University community. Each term has a structured authority record containing a uniform resource identifier (URI) and contextual information, including links to related concepts if applicable.
 
 These records are published as linked data on the open web. Specifically, the vocabularies and each of their constituent concepts are available as HTML and JSON-LD. They are accessible and usable by humans and machines at Iowa State and beyond.
 
