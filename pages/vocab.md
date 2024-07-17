@@ -6,7 +6,7 @@ permalink: /vocab/
 
 # Vocabulary List
 
-Alphabetical list of vocabularies, which link to pages about each vocabulary.
+Alphabetical list of vocabularies, with links to pages about each vocabulary.
 
 {% capture letters %}{% for item in site.data.vocabulary-sources %}{{ item.title | slice: 0 | capitalize }};{% endfor %}{% endcapture %}
 {%- assign uniqueLetters = letters | split: ';' | uniq | sort -%}
