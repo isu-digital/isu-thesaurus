@@ -4,9 +4,9 @@ layout: page
 permalink: /vocab/
 ---
 
-# Vocabularies
+# Vocabulary List
 
-List of vocabularies, or sets of terms, which link to a page about each vocabulary.
+Alphabetical list of vocabularies, which link to pages about each vocabulary.
 
 {% capture letters %}{% for item in site.data.vocabulary-sources %}{{ item.title | slice: 0 | capitalize }};{% endfor %}{% endcapture %}
 {%- assign uniqueLetters = letters | split: ';' | uniq | sort -%}
