@@ -1,12 +1,12 @@
 ---
-title: Vocabulary
+title: Vocabularies
 layout: page
 permalink: /vocab/
 ---
 
-# Glossary - Vocabulary Sources
+# Vocabularies
 
-Test glossary of vocabulary sources, which links out to a page for each source.
+List of vocabularies, or sets of terms, which link to a page about each vocabulary.
 
 {% capture letters %}{% for item in site.data.vocabulary-sources %}{{ item.title | slice: 0 | capitalize }};{% endfor %}{% endcapture %}
 {%- assign uniqueLetters = letters | split: ';' | uniq | sort -%}
