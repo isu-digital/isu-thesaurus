@@ -6,7 +6,7 @@ permalink: /terms.html
 
 # Term List
 
-Alphabetical list of terms, with links out to each term's item page. (This is just another way to view the information on the Browse page).
+Alphabetical list of terms, with links to each term's record. (This is just another way to view the information on the Browse page).
 
 {% capture letters %}{% for item in site.data[site.metadata] %}{{ item.title | slice: 0 | capitalize }};{% endfor %}{% endcapture %}
 {%- assign uniqueLetters = letters | split: ';' | uniq | sort -%}
