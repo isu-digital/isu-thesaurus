@@ -4,7 +4,7 @@ layout: page
 permalink: /terms.html
 ---
 
-# Glossary
+# Term List
 
 Alphabetical list of terms, with links out to each term's item page. (This is just another way to view the information on the Browse page).
 
