@@ -6,6 +6,8 @@ broader_term,Broader term,true
 narrower_term,Narrower term,true
 close_match,Close match,true
 related_term,Related terms,true
+subject_area,Subject area,true
 communities,Associated communities,true
 publisher,Publisher,true,
 location,,,true
+vocabulary,Vocabulary,true
