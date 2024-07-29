@@ -38,4 +38,57 @@ custom-foot: js/browse-js.html
     <div class="spinner-border text-dark" role="status"><span class="visually-hidden">Loading...</span></div>
 </div>
 
-<div class="row" id="browseItems"></div>
+<div class="row">
+    <div class="d-none d-md-block col-md-3">
+    <div class="accordion" id="vocabAccordion">
+        <div class="accordion-item">
+        <h2 class="accordion-header" id="subjectArea">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Subject Area
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="subjectArea" data-bs-parent="#vocabAccordion">
+            <div class="accordion-body">
+            {% assign unique_subjects = site.data[site.metadata] | map: "subject_area" | compact | uniq %}
+            {% for s in unique_subjects %}
+                <a href="#{{ s }}" class="btn btn-outline-dark btn-sm m-1">{{ s }}</a>
+            {% endfor %}
+            </div>
+        </div>
+        </div>
+        <div class="accordion-item">
+        <h2 class="accordion-header" id="Vocabulary">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Vocabulary
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="Vocabulary" data-bs-parent="#vocabAccordion">
+            <div class="accordion-body">
+            {% assign unique_vocabs = site.data[site.metadata] | map: "vocabulary" | compact | uniq %}
+            {% for v in unique_vocabs %}
+                <a href="#{{ v }}" class="btn btn-outline-dark btn-sm m-1">{{ v }}</a>
+            {% endfor %}
+            </div>
+        </div>
+        </div>
+        <div class="accordion-item">
+        <h2 class="accordion-header" id="Publisher">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Publisher
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="Publisher" data-bs-parent="#vocabAccordion">
+            <div class="accordion-body">
+                {% assign unique_publisher = site.data[site.metadata] | map: "publisher" | compact | uniq %}
+                {% for p in unique_publisher %}
+                    <a href="#{{ p }}" class="btn btn-outline-dark btn-sm m-1">{{ p }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-12 col-md-9 ps-md-5">
+        <div class="row" id="browseItems"></div>
+    </div>
+</div>
