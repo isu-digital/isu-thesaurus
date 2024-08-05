@@ -1,5 +1,6 @@
 field,display_name,browse_link,external_link,dc_map,schema_map
 title,Preferred form,,,DCTERMS.title,headline
+alternative_form,Alternative forms,,,,
 term_type,Term type,true,,,
 vocabulary,Vocabulary,true,,,
 language,Language of term,,,,
@@ -10,7 +11,6 @@ death_date,Death date,,,,
 definition,Definition,,,,
 usage,Usage,,,,
 history,History,,,,
-alternative_form,Alternative forms,,,,
 location,Associated locations,true,,,contentLocation
 subject_area,Subject Area,true,,,
 broader_term,Broader term,true,,,
@@ -19,6 +19,6 @@ related_term,Related terms,true,,,
 exact_match,Exact match in external vocabulary,,true,,
 close_match,Close match in external vocabulary,,true,,
 communities,Related term in external vocabulary,,,,
-publisher,Publisher,true,,DCTERMS.publisher,
 source,Source,,,,
+publisher,Publisher,true,,DCTERMS.publisher,
 rights,Rights,,true,DCTERMS.rights,
