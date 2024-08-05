@@ -1,24 +1,24 @@
 field,display_name,browse_link,external_link,dc_map,schema_map
 title,Preferred form,,,DCTERMS.title,headline
-term_type,Term type,true,,
-vocabulary,Vocabulary,true,,
-definition,Definition
-usage,Usage
-history,History
-alternative_form,Alternative forms
-broader_term,Broader term,true
-narrower_term,Narrower term,true
-related_term,Related terms,true
-subject_area,Subject Area,true
-source,Source
-publisher,Publisher,true,,DCTERMS.publisher
-language,Language of term
-exact_match,Exact match in external vocabulary,,true
-close_match,Close match in external vocabulary,,true
-communities,Related term in external vocabulary
+term_type,Term type,true,,,
+vocabulary,Vocabulary,true,,,
+language,Language of term,,,,
+establish_date,Start date,,,,
+terminate_date,End date,,,,
+birth_date,Birth date,,,,
+death_date,Death date,,,,
+definition,Definition,,,,
+usage,Usage,,,,
+history,History,,,,
+alternative_form,Alternative forms,,,,
 location,Associated locations,true,,,contentLocation
-establish_date,Start date
-terminate_date,End date
-birth_date,Birth date
-death_date,Death date
-rights,Rights,,true,DCTERMS.rights
+subject_area,Subject Area,true,,,
+broader_term,Broader term,true,,,
+narrower_term,Narrower term,true,,,
+related_term,Related terms,true,,,
+exact_match,Exact match in external vocabulary,,true,,
+close_match,Close match in external vocabulary,,true,,
+communities,Related term in external vocabulary,,,,
+publisher,Publisher,true,,DCTERMS.publisher,
+source,Source,,,,
+rights,Rights,,true,DCTERMS.rights,
