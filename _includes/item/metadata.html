@@ -44,10 +44,7 @@
             {% assign term_uris = page.communities_uri | split: ";" %}
             {% for t in terms %}
             {% assign index = forloop.index | minus: 1 %}
-            <a class="me-1" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
-            <a class="btn btn-primary me-3" href="{{ term_uris[index] }}" role="button" target="_blank" rel="noopener">
-                {% include feature/icon.html icon="link-45deg" label="external link" %}
-            </a>
+            <a class="me-1" href="{{ term_uris[index] }}" target="_blank" rel="noopener">{{ t | strip }}</a>
             {% endfor %}
         </dd>
         {% elsif f.field == "publisher" %}
