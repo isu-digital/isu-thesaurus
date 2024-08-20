@@ -18,6 +18,12 @@ The Iowa State University Library Vocabularies (ISULV) are curated lists of pref
 
 These records are published as linked data on the open web. Specifically, the vocabularies and each of their constituent concepts are available as HTML and JSON-LD. They are accessible and usable by humans and machines at Iowa State and beyond.
 
+## Contact Us
+
+Learn more about Metadata Services at Iowa State University Library at our [department page](https://www.lib.iastate.edu/about-us/departments/metadata-cataloging).
+
+To suggest additions or corrections, email [metadata@iastate.edu](mailto:metadata@iastate.edu).
+
 ## User Guide
 
 Use this site to select concepts for use in metadata for digital collections, finding aid descriptions, and bibliographic records.
