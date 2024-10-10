@@ -37,11 +37,11 @@
             <a class="me-1" href="{{ term_uris[index] }}" target="_blank" rel="noopener">{{ t | strip }}</a>
             {% endfor %}
         </dd>
-        {% elsif f.field == "communities" %}
+        {% elsif f.field == "related_external" %}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
-            {% assign terms = page.communities | split: ";" %}
-            {% assign term_uris = page.communities_uri | split: ";" %}
+            {% assign terms = page.related_external | split: ";" %}
+            {% assign term_uris = page.related_external_uri | split: ";" %}
             {% for t in terms %}
             {% assign index = forloop.index | minus: 1 %}
             <a class="me-1" href="{{ term_uris[index] }}" target="_blank" rel="noopener">{{ t | strip }}</a>
