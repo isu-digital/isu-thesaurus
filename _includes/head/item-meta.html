@@ -59,7 +59,7 @@
         "skos:narrower": {% if page.narrower_term_objectid %}{{ '/items/' | append: page.narrower_term_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
         "skos:closeMatch": [{% assign close_match = page.close_match_uri | split: ';' %}{% for c in close_match %}"{{ c }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
         "skos:exactMatch": "{{ page.exact_match_uri }}",
-        "skos:related": [{% assign communities = page.communities_uri | split: ';' %}{% for c in communities %}"{{ c }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "skos:related": [{% assign communities = page.related_external_uri | split: ';' %}{% for c in communities %}"{{ c }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
         "skos:related": [{% assign related = page.related_term_uri | split: ';' %}{% for r in related %}"{{ r }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
         "madsrdf:associatedLocale": [{% assign location = page.location_uri | split: ';' %}{% for l in location %}"{{ l }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
         "madsrdf:associatedLanguage": [{% assign language = page.language | split: ';' %}{% for l in language %}"{{ l }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
