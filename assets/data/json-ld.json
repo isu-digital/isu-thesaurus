@@ -31,6 +31,7 @@
             "skos:scopeNote": {{ item.usage | jsonify }},
             "skos:historyNote": {{ item.history | jsonify }},
             "skos:altLabel": [{% assign alt_forms = item.alternative_form | split: ';' %}{% for a in alt_forms %}"{{ a }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
+            "dc:subject": {% if item.subject_area %}{{ item.subject_area | jsonify }}{% else %}""{% endif %},
             "skos:broader": {% if item.broader_term_objectid %}{{ '/items/' | append: item.broader_term_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
             "skos:narrower": {% if item.narrower_term_objectid %}{{ '/items/' | append: item.narrower_term_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
             "skos:closeMatch": [{% assign close_match = item.close_match_uri | split: ';' %}{% for c in close_match %}"{{ c }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
