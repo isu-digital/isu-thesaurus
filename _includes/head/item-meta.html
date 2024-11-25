@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US" />
 <!-- schema.org JSON-LD -->
 <script type="application/ld+json">
-{ 
+{
     "@context": "http://schema.org",
     "@type": "CreativeWork",
     {%- assign sc-fields = site.data.config-metadata | where_exp: 'item', 'item.schema_map != nil' -%}
@@ -29,7 +29,7 @@
     {% if page.image_thumb %}"thumbnailUrl": "{{ page.image_thumb | relative_url }}",{% endif %}
     "url": {{ page.url | absolute_url | jsonify }}
 }
-</script> 
+</script>
 <!-- breadcrumbs schema -->
 <script type="application/ld+json">{"@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "item": { "@id": "{{ "/" | absolute_url }}", "name": {{ site.title | jsonify }} } },{ "@type": "ListItem", "position": 2, "item": { "@id": "{{ '/browse.html' | absolute_url }}", "name": "Browse Collection" } },{ "@type": "ListItem", "position": 3, "item": { "@id": "{{ page.url | absolute_url }}", "name": {{ page.title | jsonify }} } }] }</script>
 <!-- ISU vocab JSON-LD -->
@@ -44,17 +44,18 @@
         },
         "rdf:type": "skos:Concept",
         "rdf:type": "madsrdf:Authority",
-        "skos:prefLabel": "{{ page.pref_label }}",
+        "skos:prefLabel": {{ page.pref_label | jsonify }},
         "dc:type": "http://purl.org/dc/dcmitype/Text",
         "dc:identifier": "{{ page.objectid }}",
-        "dc:title": "{{ page.title }}",
+        "dc:title": {{ page.title | jsonify }},
         "rdf:type": [{% assign term_uris = page.term_type_uri | split: ';' %}{% for t in term_uris %}"{{ t }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
         "dc:identifier": {{ '/items/' | append: page.objectid | append: '.html' | absolute_url | jsonify }},
         "skos:inScheme": "{{ page.vocabulary_uri }}",
-        "skos:definition": "{{ page.definition }}",
-        "skos:scopeNote": "{{ page.usage }}",
-        "skos:historyNote": "{{ page.history }}",
+        "skos:definition": {{ page.definition | jsonify }},
+        "skos:scopeNote": {{ page.usage | jsonify }},
+        "skos:historyNote": {{ page.history | jsonify }},
         "skos:altLabel": [{% assign alt_forms = page.alternative_form | split: ';' %}{% for a in alt_forms %}"{{ a }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "dc:subject": {% if page.subject_area %}{{ page.subject_area | jsonify }}{% else %}""{% endif %},
         "skos:broader": {% if page.broader_term_objectid %}{{ '/items/' | append: page.broader_term_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
         "skos:narrower": {% if page.narrower_term_objectid %}{{ '/items/' | append: page.narrower_term_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
         "skos:closeMatch": [{% assign close_match = page.close_match_uri | split: ';' %}{% for c in close_match %}"{{ c }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
@@ -67,7 +68,7 @@
         "madsrdf:terminateDate": "{{ page.terminate_date }}",
         "madsrdf:birthDate": "{{ page.birth_date }}",
         "madsrdf:deathDate": "{{ page.death_date }}",
-        "madsrdf:hasSource": [{% assign source = page.source | split: ';' %}{% for s in source %}"{{ s }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "madsrdf:hasSource": [{% assign source = page.source | split: ';' %}{% for s in source %}{{ s | jsonify}}{% unless forloop.last %}, {% endunless %}{% endfor %}],
         "dc:publisher": "{{ page.publisher_uri }}",
         "dc:rights": "{{ page.rights }}"
     }
