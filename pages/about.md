@@ -73,8 +73,8 @@ The Metadata Services department maintains the vocabularies included on this sit
 
 Olivia Wikle, head of Digital Scholarship and Initiatives, developed this website. For technical information, see the Technical Credits—CollectionBuilder section. The Library IT department supports the static server that hosts this site.
 
-Potential vocabularies to be added:
-- Names associated with the Iowa State University community, including department names and personal names
+Potential vocabularies to be added or enhanced:
+- Names associated with the Iowa State University community, including department names and personal names (in progress)
 - Rights statements
 - Genres used to categorize materials in Special Collections and University Archives
 - Alternative subject terms
@@ -118,7 +118,7 @@ In the Iowa State vocabularies, each term can be described by triples made up of
 
 ## Acknowledgments
 
-The Metadata Services librarians at Iowa State University Library (Heather Campbell, Christopher Dieckman, Sylvie Manuel, Nausicaa Rose, Hema Thulsidhos) are grateful to all our colleagues who contributed to the development of this project. Our former department head, Harriet Wintermute, proposed the idea of a local linked data vocabulary. Olivia Wikle tapped her CollectionBuilder expertise to bring it to fruition. The ISU Thesaurus Working Group developed a local collection of subject terms, and Amy Bishop, Rosalie Gartner, and Laura Sullivan provided recommendations. Haylee Sheppard designed a brilliant banner illustration. Colleagues in Oklahoma (Megan Macken, Lulu Zilinskas, and Kaitlyn Palone) shared inspiration and interlinking opportunities through the [Tribal Nations in Oklahoma Metadata](https://oms.library.okstate.edu/s/tribal-nations-metadata/page/home) website.
+The Metadata Services librarians at Iowa State University Library (Heather Campbell, Christopher Dieckman, Kelly Hyland, Sylvie Manuel, Nausicaa Rose, and Hema Thulsidhos) are grateful to all our colleagues who contributed to the development of this project. Our former department head, Harriet Wintermute, proposed the idea of a local linked data vocabulary. Olivia Wikle tapped her CollectionBuilder expertise to bring it to fruition. The ISU Thesaurus Working Group developed a local collection of subject terms, and Amy Bishop, Rosalie Gartner, and Laura Sullivan provided recommendations. Lenard Kluck launched our names vocabulary by extracting and organizing data from our digital collections. Haylee Sheppard designed a brilliant banner illustration. Colleagues in Oklahoma (Megan Macken, Lulu Zilinskas, and Kaitlyn Palone) shared inspiration and interlinking opportunities through the [Tribal Nations in Oklahoma Metadata](https://oms.library.okstate.edu/s/tribal-nations-metadata/page/home) website.
 
 In addition, we thank the many representatives of Indigenous communities who responded to our outreach requests. Read more about this effort in our [Resources and Services for Iowa Indigenous Peoples LibGuide](https://go.iastate.edu/UAREL3).
 
