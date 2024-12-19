@@ -24,17 +24,17 @@ To suggest additions or corrections, email [metadata@iastate.edu](mailto:metadat
 
 ## User guide
 
-Use this site to select concepts for use in metadata for digital collections, finding aid descriptions, and bibliographic records.
+Metadata creators can use this site to select concepts for use in metadata for digital collections, finding aid descriptions, and bibliographic records. Researchers and writers can discover and use preferred subject terms and names for people and groups. Anyone can explore concepts and resources associated with the Iowa State community. 
 
 ### Items
 
-Find information about each term on individual item pages—for example, [4-H clubs](https://isu-digital.github.io/isu-thesaurus/items/isut001.html).
+Find information about each term on individual item pages—for example, [4-H clubs](https://digital.lib.iastate.edu/isulv/items/isut001.html).
 
-On these pages, linked values point to related terms in the collection. Linked buttons [description] open external authority records via URI. 
+On these pages, linked values point to related terms in ISULV, external authority records, or related resources.
 
 To aid your selection of a term, review the definition, usage notes, related terms, and other information on the page. Be advised that some usage notes recommend the assignment of multiple related terms.
 
-For details about each property, see our **Metadata elements page** [link to section or separate page].
+For details about each property, see the [Metadata elements (properties)](#metadata-elements-properties) section.
 
 ### Menus
 
@@ -74,14 +74,14 @@ The Metadata Services department maintains the vocabularies included on this sit
 Olivia Wikle, head of Digital Scholarship and Initiatives, developed this website. For technical information, see the Technical Credits—CollectionBuilder section. The Library IT department supports the static server that hosts this site.
 
 Potential vocabularies to be added or enhanced:
-- Names associated with the Iowa State University community, including department names and personal names (in progress)
+- Names associated with the Iowa State University community, including department names (in progress)
 - Rights statements
-- Genres used to categorize materials in Special Collections and University Archives
 - Alternative subject terms
+- Genres used to categorize materials in Special Collections and University Archives
 
-Other future development ideas:
+Other future development plans:
 - A reconciliation service for use with OpenRefine
-- Interlinking with Wikidata
+- Interlinking with Wikidata and ORCID
 
 ## Metadata elements (properties)
 
@@ -93,7 +93,7 @@ Each preferred term in the Iowa State vocabularies is described by metadata elem
 
 Subjects, predicates, and objects are ideally expressed as URIs (Uniform Resource Identifier) or IRIs (International Resource Identifier). Objects also can be a literal value (e.g., a string of text). Multiple triples interlinking together form a knowledge graph.
 
-In the Iowa State vocabularies, each term can be described by triples made up of a subject (the term itself), a predicate (property), and an object (value). This table lists our selected properties and their possible values. To facilitate interlinking among concepts within the vocabularies and on the open web, properties were chosen from several linked data schemas: [Dublin Core Metadata Initiative (DCMI) Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/), [Simple Knowledge Organization System (SKOS)](https://www.w3.org/2009/08/skos-reference/skos.html), and [Metadata Authority Description Schema in RDF (MADS/RDF)](https://id.loc.gov/ontologies/madsrdf/v1.html). 
+In the Iowa State vocabularies, each term can be described by triples made up of a subject (the term itself), a predicate (property), and an object (value). This table lists our selected properties and their possible values. To facilitate interlinking among concepts within the vocabularies and on the open web, properties were chosen from several linked data schemas, including [Dublin Core Metadata Initiative (DCMI) Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/), [Simple Knowledge Organization System (SKOS)](https://www.w3.org/2009/08/skos-reference/skos.html), and [Metadata Authority Description Schema in RDF (MADS/RDF)](https://id.loc.gov/ontologies/madsrdf/v1.html). 
 
 <div style="max-width: 900px; margin-left: auto; margin-right: auto;" class="py-4">
     <table class="table table table-striped">
