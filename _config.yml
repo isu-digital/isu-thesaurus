@@ -58,8 +58,8 @@ page_gen:
 #
 organization-name: "Iowa State University Library"
 organization-link: https://www.lib.iastate.edu/
-organization-logo-banner: /assets/img/iastate-red.svg
-organization-logo-nav: /assets/img/iastate-white.svg
+organization-logo-banner: https://isuu00001library102stg.z21.web.core.windows.net/assets/media/ISU_Library_Center_Red.png
+organization-logo-nav: https://isuu00001library102stg.z21.web.core.windows.net/assets/media/ISU_Library_Center_White.png
 
 ##########
 # GOOGLE SERVICES [optional!]
