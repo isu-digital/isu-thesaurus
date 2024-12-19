@@ -9,7 +9,7 @@
     <dl>
         <dt class="field">URI:</dt>
         <dd class="field-value">
-            <a class="me-3" href="{{ page.objectid | prepend: 'items/' | append: '.html' | absolute_url }}">{{ page.objectid | prepend: 'items/' | absolute_url }}</a>
+            <a class="me-3" href="{{ page.objectid | prepend: 'items/' | append: '.html' | absolute_url }}">{{ page.objectid | prepend: 'items/' | append: '.html' | absolute_url }}</a>
         </dd>
         {% for f in fields %}{% if page[f.field] %}
         {% if f.field == "vocabulary" %}
