@@ -8,11 +8,11 @@
 # URL VARIABLES
 #
 # site domain, full URL to the production location of your collection
-url: https://isu-digital.github.io # https://digital.lib.iastate.edu
+url: https://digital.lib.iastate.edu # https://digital.lib.iastate.edu
 # path to location on the domain if necessary e.g. /digital/hjccc
-baseurl: /isu-thesaurus #/vocabs
+baseurl: /isulv #/vocabs
 # location of code, the full url to your github repository
-source-code: https://github.com/CollectionBuilder/collectionbuilder-csv
+source-code: https://github.com/isu-digital/isu-thesaurus
 
 ##########
 # SITE SETTINGS
