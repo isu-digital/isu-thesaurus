@@ -1,7 +1,9 @@
 field,index,display
 title,true,true
-date,true,true
-creator,true,false
-description,true,true
-subject,true,true
-location,true,false
+pref_label,true,true
+objectid,true,true
+alternative_form,true,true
+establish_date,true,true
+terminate_date,true,true
+source,true,true
+publisher,true,true
