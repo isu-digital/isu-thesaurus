@@ -6,7 +6,7 @@
 @charset "utf-8";
 
 /* base variables pulled from theme.yml */
-$base-font-family: {{ site.data.theme.base-font-family | default: '""' }};
+$base-font-family: {{ site.data.theme.base-font-family | default: 'Arial, Helvetica Neue, sans-serif' }};
 $base-font-size: {{ site.data.theme.base-font-size | default: '""' }};
 $text-color: {{ site.data.theme.text-color | default: '""' }};
 $link-color: {{ site.data.theme.link-color | default: '""' }};
