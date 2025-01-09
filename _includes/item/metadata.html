@@ -15,7 +15,7 @@
         {% if f.field == "vocabulary" %}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
-        <a class="me-1" href="{% if page.vocabulary_uri contains 'iastate.edu' %}{% assign parts = page.vocabulary_uri | split: '/vocabs' %}{{ parts[1] | relative_url }}{% else %}{{ page.vocabulary_uri }}{% endif %}">{{ page.vocabulary | strip }}</a>
+        <a class="me-1" href="{% if page.vocabulary_uri contains 'iastate.edu' %}{% assign parts = page.vocabulary_uri | split: '/isulv' %}{{ parts[1] | relative_url }}{% else %}{{ page.vocabulary_uri }}{% endif %}">{{ page.vocabulary | strip }}</a>
         </dd>
         {% elsif f.field == "close_match" %}
         <dt class="field">{{ f.display_name }}:</dt>
