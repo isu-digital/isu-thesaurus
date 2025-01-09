@@ -5,7 +5,6 @@
 {%- assign dc-fields = site.data.config-metadata | where_exp: 'item', 'item.dc_map != nil' -%}
 {% for f in dc-fields %}{% if page[f.field] %}<meta name="{{ f.dc_map | xml_escape }}" content="{{ page[f.field] | truncatewords: 25 | xml_escape }}" xml:lang="en" />
 {% endif %}{% endfor %}
-{% if site.organization-name %}<meta name="DCTERMS.publisher" content="{{ site.organization-name | escape }}" xml:lang="en" />{% endif %}
 <!-- Open Graph meta -->
 <meta property="og:title" content="{{ page.title | escape }}" />
 <meta property="og:type" content="website" />
@@ -42,13 +41,10 @@
             "schema": "http://schema.org/",
             "skos": "http://www.w3.org/2004/02/skos/core#"
         },
-        "rdf:type": "skos:Concept",
-        "rdf:type": "madsrdf:Authority",
+        "rdf:type": ["skos:Concept", "madsrdf:Authority", {% assign term_uris = page.term_type_uri | split: ';' %}{% for t in term_uris %}"{{ t }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
         "skos:prefLabel": {{ page.pref_label | jsonify }},
         "dc:type": "http://purl.org/dc/dcmitype/Text",
-        "dc:identifier": "{{ page.objectid }}",
         "dc:title": {{ page.title | jsonify }},
-        "rdf:type": [{% assign term_uris = page.term_type_uri | split: ';' %}{% for t in term_uris %}"{{ t }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
         "dc:identifier": {{ '/items/' | append: page.objectid | append: '.html' | absolute_url | jsonify }},
         "skos:inScheme": "{{ page.vocabulary_uri }}",
         "skos:definition": {{ page.definition | jsonify }},
