@@ -65,7 +65,7 @@ For details about each property, see the [Metadata elements (properties)](#metad
     </table>
 </div>
 
-## Maintenance and future development
+## Maintenance and development
 
 This open collection of linked data vocabularies is a project of the Iowa State University Library.
 
@@ -73,15 +73,16 @@ The Metadata Services department maintains the vocabularies included on this sit
 
 Olivia Wikle, head of Digital Scholarship and Initiatives, developed this website. For technical information, see the Technical Credits—CollectionBuilder section. The Library IT department supports the static server that hosts this site.
 
-Potential vocabularies to be added or enhanced:
-- Names associated with the Iowa State University community, including department names (in progress)
-- Rights statements
-- Alternative subject terms
+Vocabularies in progress:
+- Names associated with the Iowa State University community, including department names
+- Rights statements used in digital collections
+- Supplemental or alternative subject terms to improve discovery
 - Genres used to categorize materials in Special Collections and University Archives
 
-Other future development plans:
-- A reconciliation service for use with OpenRefine
-- Interlinking with Wikidata and ORCID
+Additional development efforts:
+- [ISULV-reconcile](https://github.com/isu-meta/isulv-reconcile), a reconciliation service for use with [OpenRefine](https://openrefine.org/)
+- Interlinking with [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) and [ORCID](https://orcid.org/)
+- [Wikidata property for ISULV identifiers](https://www.wikidata.org/wiki/Wikidata:Property_proposal/Authority_control#Iowa_State_University_Library_Vocabularies_ID)
 
 ## Metadata elements (properties)
 
