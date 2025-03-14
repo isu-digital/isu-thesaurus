@@ -5,6 +5,8 @@ Alternative forms,http://www.w3.org/2004/02/skos/core#altLabel,Variant forms of 
 Term type,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,"Type of term (all are an instance of the MADS/RDF Authority class, plus Topic, GenreForm, or Name, as applicable)."
 Vocabulary,http://www.w3.org/2004/02/skos/core#inScheme,"Title of the source vocabulary, or scheme of terms to which the term belongs."
 Language of term,http://www.loc.gov/mads/rdf/v1#associatedLanguage,Language of origin of the term.
+Local rights statement,http://www.w3.org/2004/02/skos/core#example,Text to be entered in the Digital Collections rights element.
+Standard rights statement URI,http://www.w3.org/2004/02/skos/core#exactMatch,URI for the standard rights statement that corresponds to the local rights statement.
 Start date,http://www.loc.gov/mads/rdf/v1#establishDate,Year when the entity represented by the term was established.
 End date,http://www.loc.gov/mads/rdf/v1#terminateDate,Year when the entity represented by the term was terminated.
 Birth date,http://www.loc.gov/mads/rdf/v1#birthDate,Year when the person represented by the term was born.
