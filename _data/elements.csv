@@ -5,7 +5,7 @@ Alternative forms,http://www.w3.org/2004/02/skos/core#altLabel,Variant forms of 
 Term type,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,"Type of term (all are an instance of the MADS/RDF Authority class, plus Topic, GenreForm, or Name, as applicable)."
 Vocabulary,http://www.w3.org/2004/02/skos/core#inScheme,"Title of the source vocabulary, or scheme of terms to which the term belongs."
 Language of term,http://www.loc.gov/mads/rdf/v1#associatedLanguage,Language of origin of the term.
-Local rights statement,http://www.w3.org/2004/02/skos/core#example,Text to be entered in the Digital Collections rights element.
+Local rights statement,http://www.w3.org/2004/02/skos/core#example,"Text to be entered in the <a href=""https://digitalcollections.lib.iastate.edu/"">Iowa State University Library Digital Collections</a> rights element."
 Standard rights statement URI,http://www.w3.org/2004/02/skos/core#exactMatch,URI for the standard rights statement that corresponds to the local rights statement.
 Start date,http://www.loc.gov/mads/rdf/v1#establishDate,Year when the entity represented by the term was established.
 End date,http://www.loc.gov/mads/rdf/v1#terminateDate,Year when the entity represented by the term was terminated.
@@ -19,6 +19,15 @@ Subject area,http://purl.org/dc/elements/1.1/subject,Topical categories for grou
 Broader term,http://www.w3.org/2004/02/skos/core#broader,Broader or more general terms in the vocabulary hierarchy.
 Narrower term,http://www.w3.org/2004/02/skos/core#narrower,Narrower or more specific terms in the vocabulary hierarchy.
 Related terms,http://www.w3.org/2004/02/skos/core#related,Terms in the local vocabulary that should be assigned together or reviewed to ensure the best selection.
+Absorbed organization,http://rdaregistry.info/Elements/a/P50301,An organization that was absorbed by the organization being described.
+Absorbing organization,http://rdaregistry.info/Elements/a/P50302,An organization that absorbed the organization being described.
+Component of merger,http://rdaregistry.info/Elements/a/P50232,An organization that merged with the organization being described to create another organization.
+Mergee,http://rdaregistry.info/Elements/a/P50011,An organization that merged with one or more other organizations to create the one being described.
+Predecessor,http://rdaregistry.info/Elements/a/P50012,An organization that preceded the one being described.
+Predecessor of split,http://rdaregistry.info/Elements/a/P50229,An organization that split to create the organization being described and at least one other organization.
+Product of merger,http://rdaregistry.info/Elements/a/P50013,An organization created when the one being described merged with one or more other organizations.
+Product of split,http://rdaregistry.info/Elements/a/P50014,An organization created when the one being described split into the former and one or more other organizations.
+Successor,http://rdaregistry.info/Elements/a/P50016,An organization that succeeded the one being described.
 Exact match in external vocabulary,http://www.w3.org/2004/02/skos/core#exactMatch,Term in an external vocabulary selected for use by local metadata creators. The form and usage of the term have not been modified.
 Close match in external vocabulary,http://www.w3.org/2004/02/skos/core#closeMatch,Terms in an external vocabulary that refer to a similar concept but have a different form or usage than the locally preferred term.
 Related term in external vocabulary,http://www.w3.org/2004/02/skos/core#related,"Terms in an external vocabulary that refer to a related concept. For example, preferred subject headings for Indigenous peoples may have related name authority records for associated tribal organizations."
