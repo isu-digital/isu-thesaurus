@@ -38,31 +38,35 @@ For details about each property, see the [Metadata elements (properties)](#metad
 
 ### Menus
 
-<div style="max-width: 650px; margin-left: auto; margin-right: auto;">
-    <table class="table table table-striped">
-        <tbody>
-            <tr>
-                <th scope="row">Browse</th>
-                <td>Explore all terms in all vocabularies or filter to search by keyword.</td>
-            </tr>
-            <tr>
-                <th scope="row">Data</th>
-                <td>View vocabulary metadata in a table or download it as a CSV or Excel file.</td>
-            </tr>
-            <tr>
-                <th scope="row">Locations</th>
-                <td>Browse locations associated with vocabulary terms.</td>
-            </tr>
-            <tr>
-                <th scope="row">Terms</th>
-                <td>Peruse an A–Z list of all vocabulary terms.</td>
-            </tr>
-            <tr>
-            <th scope="row">Vocabularies</th>
-                <td>See all vocabularies included in the collection. Individual vocabulary pages contain a description of the vocabulary and lists of constituent terms.</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="row justify-content-center py-4">
+    <div class="col-md-7">
+        <div class="table-responsive">
+            <table class="table table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">Browse</th>
+                        <td>Explore all terms in all vocabularies or filter to search by keyword.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Data</th>
+                        <td>View vocabulary metadata in a table or download it as a CSV or Excel file.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Locations</th>
+                        <td>Browse locations associated with vocabulary terms.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Terms</th>
+                        <td>Peruse an A–Z list of all vocabulary terms.</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Vocabularies</th>
+                        <td>See all vocabularies included in the collection. Individual vocabulary pages contain a description of the vocabulary and lists of constituent terms.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 ## Maintenance and development
@@ -96,25 +100,29 @@ Subjects, predicates, and objects are ideally expressed as URIs (Uniform Resourc
 
 In the Iowa State vocabularies, each term can be described by triples made up of a subject (the term itself), a predicate (property), and an object (value). This table lists our selected properties and their possible values. To facilitate interlinking among concepts within the vocabularies and on the open web, properties were chosen from several linked data schemas, including [Dublin Core Metadata Initiative (DCMI) Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/), [Simple Knowledge Organization System (SKOS)](https://www.w3.org/2009/08/skos-reference/skos.html), and [Metadata Authority Description Schema in RDF (MADS/RDF)](https://id.loc.gov/ontologies/madsrdf/v1.html). 
 
-<div style="max-width: 900px; margin-left: auto; margin-right: auto;" class="py-4">
-    <table class="table table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Property label</th>
-                <th scope="col">Property URI</th>
-                <th scope="col">Value</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for element in site.data.elements %}
-            <tr>
-                <th scope="row">{{ element.property-label}}</th>
-                <td><a href="{{ element.property-uri }}">{{ element.property-uri }}</a></td>
-                <td>{{ element.value }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<div class="row justify-content-center py-4">
+    <div class="col-md-8">
+        <div class="table-responsive">
+            <table class="table table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Property label</th>
+                        <th scope="col">Property URI</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for element in site.data.elements %}
+                    <tr>
+                        <th scope="row">{{ element.property-label}}</th>
+                        <td><a href="{{ element.property-uri }}">{{ element.property-uri }}</a></td>
+                        <td>{{ element.value }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 ## Acknowledgments
