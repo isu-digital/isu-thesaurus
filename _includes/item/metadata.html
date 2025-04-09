@@ -47,6 +47,16 @@
             <a class="me-1" href="{{ term_uris[index] }}" target="_blank" rel="noopener">{{ t | strip }}</a>
             {% endfor %}
         </dd>
+        {% elsif f.field == "identifier" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.identifier | split: ";" %}
+            {% assign term_uris = page.identifier_uri | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ term_uris[index] }}" target="_blank" rel="noopener">{{ t | strip }}</a>
+            {% endfor %}
+        </dd>
         {% elsif f.field == "publisher" %}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
