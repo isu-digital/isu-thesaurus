@@ -87,6 +87,96 @@
             <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
+        {% elsif f.field == "absorbed_organization" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.absorbed_organization | split: ";" %}
+            {% assign term_uris = page.absorbed_organization_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "absorbing_organization" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.absorbing_organization | split: ";" %}
+            {% assign term_uris = page.absorbing_organization_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "component_of_merger" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.component_of_merger | split: ";" %}
+            {% assign term_uris = page.component_of_merger_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "mergee" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.mergee | split: ";" %}
+            {% assign term_uris = page.mergee_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "predecessor" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.predecessor | split: ";" %}
+            {% assign term_uris = page.predecessor_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "predecessor_of_split" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.predecessor_of_split | split: ";" %}
+            {% assign term_uris = page.predecessor_of_split_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "product_of_merger" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.product_of_merger | split: ";" %}
+            {% assign term_uris = page.product_of_merger_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "product_of_split" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.product_of_split | split: ";" %}
+            {% assign term_uris = page.product_of_split_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
+            {% endfor %}
+        </dd>
+        {% elsif f.field == "successor" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {% assign terms = page.successor | split: ";" %}
+            {% assign term_uris = page.successor_objectid | split: ";" %}
+            {% for t in terms %}
+            {% assign index = forloop.index | minus: 1 %}
+            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
+            {% endfor %}
+        </dd>
         {% else %}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
