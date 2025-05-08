@@ -30,7 +30,7 @@ Alphabetical list of terms, with links to each term's record. (This is just anot
 {%- if x == letter -%}
     <dt class="glossary-def"><a href="{{ '/items/' | append: item.objectid | append: '.html' | relative_url }}">
     {{ item.title }}</a></dt> 
-    <dd>{{ item.definition }}</dd>
+    <dd>{{ item.usage }}</dd>
 {%- endif -%}
 {%- endfor -%}
 </dl>
