@@ -21,25 +21,25 @@ item-meta: true
 
             <h3>Description</h3>
             <p>{{ page.description }}</p>
-            <p><a class="btn btn-outline-secondary btn-lg" href="{{ '/browse.html#' | append: page.title | relative_url }}">Browse Terms</a></p>
+            <p><a class="btn btn-outline-secondary btn-lg" href="{{ '/browse.html#' | append: page.title | relative_url }}">Browse All Terms in This Vocabulary</a></p>
 
         </div>
 
         <div class="col-sm-6" id="terms">
 
-            <h3>Terms</h3>
-            <ul>
-                {%- for item in site.data[site.metadata] -%}
+           <h3>Featured Terms</h3>
+           <ul>
+                {%- for item in site.data[site.metadata] limit:100 -%}
                 {%- if item.vocabulary == page.title -%}
                 <li><a href="{{ '/items/' | append: item.objectid | append: '.html' | relative_url }}">{{ item.title }}</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>
 
-        </div>
+       </div>
     </div>
 
     <div class="text-center">
-        <a class="btn btn-secondary" href="{{ '/vocab/' | relative_url }}" role="button">&laquo; Vocabulary</a>
+        <a class="btn btn-secondary" href="{{ '/vocab/' | relative_url }}" role="button">&laquo; Vocabularies</a>
     </div>
 </div>
