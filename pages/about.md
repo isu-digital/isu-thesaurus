@@ -86,7 +86,7 @@ Vocabularies in progress:
 Additional development efforts:
 - [ISULV-reconcile](https://github.com/isu-meta/isulv-reconcile), a reconciliation service for use with [OpenRefine](https://openrefine.org/)
 - Interlinking with [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) and [ORCID](https://orcid.org/)
-- [Wikidata property for ISULV identifiers](https://www.wikidata.org/wiki/Wikidata:Property_proposal/Authority_control#Iowa_State_University_Library_Vocabularies_ID)
+- [Wikidata property for ISULV identifiers](https://www.wikidata.org/wiki/Property:P13388)
 
 ## Metadata elements (properties)
 
