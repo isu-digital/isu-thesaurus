@@ -1,14 +1,14 @@
 {% if page.subject %}<meta name="keywords" content="{{ page.subject | escape }}" >{% endif %}
-{% if page.description %}<meta name="description" content="Item from {{ site.title | escape }}: {{ page.description | truncatewords: 25 | escape }}">{% endif %}
+{% if page.description %}<meta name="description" content="Page from {{ site.title | escape }}: {{ page.description | truncatewords: 25 | escape }}">{% endif %}
 <!-- DC meta -->
 <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
-{%- assign dc-fields = site.data.config-metadata | where_exp: 'item', 'item.dc_map != nil' -%}
+{%- assign dc-fields = site.data.config-metadata | where_exp: 'page', 'item.dc_map != nil' -%}
 {% for f in dc-fields %}{% if page[f.field] %}<meta name="{{ f.dc_map | xml_escape }}" content="{{ page[f.field] | truncatewords: 25 | xml_escape }}" xml:lang="en" />
 {% endif %}{% endfor %}
 <!-- Open Graph meta -->
 <meta property="og:title" content="{{ page.title | escape }}" />
 <meta property="og:type" content="website" />
-<meta property="og:description" content="Item from {{ site.title | escape }}. {{ page.description | truncatewords: 30 | escape }}" />
+<meta property="og:description" content="Page from {{ site.title | escape }}. {{ page.description | truncatewords: 30 | escape }}" />
 {% if page.image_small or page.image_thumb %}
 <meta property="og:image" content="{{ page.image_small | default: page.image_thumb | relative_url }}" />
 <meta property="og:image:alt" content="{{ page.title | escape }}" />{% endif %}
@@ -20,7 +20,7 @@
 {
     "@context": "http://schema.org",
     "@type": "CreativeWork",
-    {%- assign sc-fields = site.data.config-metadata | where_exp: 'item', 'item.schema_map != nil' -%}
+    {%- assign sc-fields = site.data.config-metadata | where_exp: 'page', 'item.schema_map != nil' -%}
     {% for f in sc-fields %}{% if page[f.field] %}
     "{{ f.schema_map }}": {{ page[f.field] | jsonify }},{% endif %}{% endfor %}
     "isPartOf": {{ site.title | jsonify }},
@@ -30,7 +30,7 @@
 }
 </script>
 <!-- breadcrumbs schema -->
-<script type="application/ld+json">{"@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "item": { "@id": "{{ "/" | absolute_url }}", "name": {{ site.title | jsonify }} } },{ "@type": "ListItem", "position": 2, "item": { "@id": "{{ '/browse.html' | absolute_url }}", "name": "Browse Collection" } },{ "@type": "ListItem", "position": 3, "item": { "@id": "{{ page.url | absolute_url }}", "name": {{ page.title | jsonify }} } }] }</script>
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "BreadcrumbList", "pageListElement": [{ "@type": "ListItem", "position": 1, "item": { "@id": "{{ "/" | absolute_url }}", "name": {{ site.title | jsonify }} } },{ "@type": "ListItem", "position": 2, "item": { "@id": "{{ '/browse.html' | absolute_url }}", "name": "Browse Collection" } },{ "@type": "ListItem", "position": 3, "item": { "@id": "{{ page.url | absolute_url }}", "name": {{ page.title | jsonify }} } }] }</script>
 <!-- ISU vocab JSON-LD -->
 <script type="application/ld+json">
     {
@@ -44,28 +44,39 @@
         "rdf:type": ["skos:Concept", "madsrdf:Authority", {% assign term_uris = page.term_type_uri | split: ';' %}{% for t in term_uris %}"{{ t }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
         "skos:prefLabel": {{ page.pref_label | jsonify }},
         "dc:type": "http://purl.org/dc/dcmitype/Text",
+        "dc:identifier": {{ page.objectid | jsonify }},
         "dc:title": {{ page.title | jsonify }},
-        "dc:identifier": {{ '/items/' | append: page.objectid | append: '.html' | absolute_url | jsonify }},
-        "skos:inScheme": "{{ page.vocabulary_uri }}",
+        "dc:identifier": {{ '/pages/' | append: page.objectid | append: '.html' | absolute_url | jsonify }},
+        "skos:inScheme": {{ page.vocabulary_uri | jsonify }},
         "skos:definition": {{ page.definition | jsonify }},
         "skos:scopeNote": {{ page.usage | jsonify }},
         "skos:historyNote": {{ page.history | jsonify }},
-        "skos:altLabel": [{% assign alt_forms = page.alternative_form | split: ';' %}{% for a in alt_forms %}"{{ a }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
-        "dc:subject": {% if page.subject_area %}{{ page.subject_area | jsonify }}{% else %}""{% endif %},
-        "skos:broader": {% if page.broader_term_objectid %}{{ '/items/' | append: page.broader_term_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
-        "skos:narrower": {% if page.narrower_term_objectid %}{{ '/items/' | append: page.narrower_term_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
-        "skos:closeMatch": [{% assign close_match = page.close_match_uri | split: ';' %}{% for c in close_match %}"{{ c }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
-        "skos:exactMatch": "{{ page.exact_match_uri }}",
-        "skos:related": [{% assign communities = page.related_external_uri | split: ';' %}{% for c in communities %}"{{ c }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
-        "skos:related": [{% assign related = page.related_term_uri | split: ';' %}{% for r in related %}"{{ r }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
-        "madsrdf:associatedLocale": [{% assign location = page.location_uri | split: ';' %}{% for l in location %}"{{ l }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
-        "madsrdf:associatedLanguage": [{% assign language = page.language | split: ';' %}{% for l in language %}"{{ l }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
-        "madsrdf:establishDate": "{{ page.establish_date }}",
-        "madsrdf:terminateDate": "{{ page.terminate_date }}",
-        "madsrdf:birthDate": "{{ page.birth_date }}",
-        "madsrdf:deathDate": "{{ page.death_date }}",
+        "skos:altLabel": [{% assign alt_forms = page.alternative_form | split: ';' %}{% for a in alt_forms %}{{ a | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "dc:subject": {% if page.subject_area %}{{ item.subject_area | jsonify }}{% else %}null{% endif %},
+        "skos:broader": {% if page.broader_term_objectid %}{{ '/items/' | append: item.broader_term_objectid | append: '.html' | absolute_url | jsonify }}{% else %}null{% endif %},
+        "skos:narrower": {% if page.narrower_term_objectid %}{{ '/items/' | append: item.narrower_term_objectid | append: '.html' | absolute_url | jsonify }}{% else %}null{% endif %},
+        "skos:closeMatch": [{% assign close_match = page.close_match_uri | split: ';' %}{% for c in close_match %}{{ c | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "skos:exactMatch": {{ page.exact_match_uri | jsonify }},
+        "skos:related": [{% assign communities = page.related_external_uri | split: ';' %}{% for c in communities %}{{ c | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "skos:related": [{% assign related = page.related_term_uri | split: ';' %}{% for r in related %}{{ r | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "madsrdf:associatedLocale": [{% assign location = page.location_uri | split: ';' %}{% for l in location %}{{ l | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "madsrdf:associatedLanguage": [{% assign language = page.language | split: ';' %}{% for l in language %}{{ l | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+        "madsrdf:establishDate": {{ page.establish_date | jsonify }},
+        "madsrdf:terminateDate": {{ page.terminate_date | jsonify }},
+        "madsrdf:birthDate": {{ page.birth_date | jsonify }},
+        "madsrdf:deathDate": {{ page.death_date | jsonify }},
         "madsrdf:hasSource": [{% assign source = page.source | split: ';' %}{% for s in source %}{{ s | jsonify}}{% unless forloop.last %}, {% endunless %}{% endfor %}],
-        "dc:publisher": "{{ page.publisher_uri }}",
-        "dc:rights": "{{ page.rights }}"
+        "dc:publisher": {{ page.publisher_uri | jsonify }},
+        "dc:rights": {{ page.rights | jsonify }},
+        "skos:example": {{ page.rights_statement | jsonify }},
+        "rda:P50301": {% if page.absorbed_organization_objectid %}{{ '/items/' | append: page.absorbed_organization_objectid | append: '.html' | absolute_url | jsonify }}{% else %}null{% endif %},
+        "rda:P50302": {% if page.absorbing_organization_objectid %}{{ '/items/' | append: page.absorbing_organization_objectid | append: '.html' | absolute_url | jsonify }}{% else %}null{% endif %},
+        "rda:P50232": {% if page.component_of_merger_objectid %}{{ '/items/' | append: page.component_of_merger_objectid | append: '.html' | absolute_url | jsonify }}{% else %}null{% endif %},
+        "rda:P50011": {% if page.mergee_objectid %}{{ '/items/' | append: page.mergee_objectid | append: '.html' | absolute_url | jsonify }}{% else %}null{% endif %},
+        "rda:P50012": {% if page.predecessor_objectid %}{{ '/items/' | append: page.predecessor_objectid | append: '.html' | absolute_url | jsonify}}{% else %}null{% endif %},
+        "rda:P50229": {% if page.predecessor_of_split_objectid %}{{ '/items/' | append: page.predecessor_of_split_objectid | append: '.html' | absolute_url | jsonify }}{% else %}null{% endif %},
+        "rda:P50013": {% if page.product_of_merger_objectid %}{{ '/items/' | append: page.product_of_merger_objectid | append: '.html' | absolute_url | jsonify }}{% else %}null{% endif %},
+        "rda:P50014": {% if page.product_of_split_objectid %}{{ '/items/' | append: page.product_of_split_objectid | append: '.html' | absolute_url | jsonify }}{% else %}null{% endif %},
+        "rda:P50016": {% if page.successor_objectid %}{{ '/items/' | append: page.successor_objectid | append: '.html' | absolute_url | jsonify }}{% else %}null{% endif %}
     }
     </script>
