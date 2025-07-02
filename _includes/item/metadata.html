@@ -5,12 +5,21 @@
     
 {%- endcomment -%}
 {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display_name != nil' -%}
+{% assign children = site.data[site.metadata] | where_exp: 'item','item.parentid == page.objectid' %}
 <div id="item-metadata">
     <dl>
         <dt class="field">URI:</dt>
         <dd class="field-value">
             <a class="me-3" href="{{ page.objectid | prepend: 'items/' | append: '.html' | absolute_url }}">{{ page.objectid | prepend: 'items/' | append: '.html' | absolute_url }}</a>
         </dd>
+        {% if children and children.size > 0 %}
+        <dt class="field">Child values:</dt>
+        {% for c in children %}
+        <dd class="field-value">
+            <a class="me-3" href="{{ c.objectid | prepend: 'items/' | append: '.html' | absolute_url }}">{{ c.title }}</a>
+        </dd>
+        {% endfor %}
+        {% endif %}
         {% for f in fields %}{% if page[f.field] %}
         {% if f.field == "vocabulary" %}
         <dt class="field">{{ f.display_name }}:</dt>
