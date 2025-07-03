@@ -5,6 +5,7 @@ layout: default
 # item-meta adds rich meta markup to the page on production build
 item-meta: true
 ---
+{%- assign children = site.data[site.metadata] | where_exp: 'item','item.parent_record == page.objectid' -%}
 <div class="container py-3">
 
     {% include item/breadcrumbs.html %}
@@ -17,18 +18,36 @@ item-meta: true
         </a>{% endunless %}
     </h2>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center pb-4 gx-5">
         <div class="col-12 col-md-10">
 
         {{ content }}
 
         </div>
 
+        {% if children and children.size > 0 %}
+        <div class="col-12 col-md-6" id="metadata">
+
+            {% include item/metadata.html %}
+
+        </div>
+        <div class="col-12 col-md-6">
+
+            <h3>Child values:</h3>
+           <ul>
+                {% for c in children %}
+                <li><a class="me-3" href="{{ c.objectid | prepend: 'items/' | append: '.html' | absolute_url }}">{{ c.title }}</a></li>
+                {% endfor %}
+            </ul>
+
+        </div>
+        {% else %}
         <div class="col-12 col-md-10" id="metadata">
 
             {% include item/metadata.html %}
 
         </div>
+        {% endif %}
 
     </div>
 
