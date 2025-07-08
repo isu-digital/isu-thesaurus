@@ -29,7 +29,7 @@ item-meta: true
 
            <h3>Featured Terms</h3>
            <ul>
-                {%- for item in site.data[site.metadata] limit:100 -%}
+                {%- for item in site.data[site.metadata] limit:140 -%}
                 {%- if item.vocabulary == page.title -%}
                 <li><a href="{{ '/items/' | append: item.objectid | append: '.html' | relative_url }}">{{ item.title }}</a></li>
                 {% endif %}
