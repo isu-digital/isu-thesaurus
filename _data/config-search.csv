@@ -1,9 +1,11 @@
 field,index,display
 title,true,true
-pref_label,true,true
 objectid,true,true
+pref_label,true,false
 alternative_form,true,true
-establish_date,true,true
-terminate_date,true,true
-source,true,true
-publisher,true,true
+usage,true,true
+subject_area,true,false
+source,true,false
+exact_match_uri,true,true
+close_match_uri,true,true
+identifier_uri,true,true
