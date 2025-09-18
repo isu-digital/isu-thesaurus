@@ -1,9 +1,9 @@
-field,index,display
-title,true,true
-pref_label,true,true
-objectid,true,true
-alternative_form,true,true
-establish_date,true,true
-terminate_date,true,true
-source,true,true
-publisher,true,true
+field,index,display,display_name
+title,true,true,Title
+pref_label,true,true,Preferred Label
+objectid,true,true,objectid
+alternative_form,true,true,Alternative Form
+establish_date,true,true,Start Date
+terminate_date,true,true,End Date
+source,true,true,Source
+publisher,true,true,Publisher
