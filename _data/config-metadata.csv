@@ -15,7 +15,7 @@ usage,Usage,,,,
 history,History,,,,
 location,Associated locations,true,,,contentLocation
 subject_area,Subject area,true,,,
-parent_record,Parent Term,true
+parent_record,Parent Term,
 broader_term,Broader term,,,,
 narrower_term,Narrower term,,,,
 related_term,Related terms,,,,

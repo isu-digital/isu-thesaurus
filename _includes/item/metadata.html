@@ -5,17 +5,28 @@
     
 {%- endcomment -%}
 {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display_name != nil' -%}
+{%- assign parents = site.data[site.metadata] | where_exp: 'item', 'item.parent_record == nil' -%}
 <div id="item-metadata">
     <dl>
+        {% if page.usage and page.display_template == "parent" %}
+        <p class="h3 pb-4"><u>{{ page.usage }}</u></p>
+        {% else %}
         <dt class="field">URI:</dt>
         <dd class="field-value">
             <a class="me-3" href="{{ page.objectid | prepend: 'items/' | append: '.html' | absolute_url }}">{{ page.objectid | prepend: 'items/' | append: '.html' | absolute_url }}</a>
         </dd>
-        {% for f in fields %}{% if page[f.field] %}
+        {% endif %}
+        {% for f in fields %}{% if page[f.field] and f.field != "usage" %}
         {% if f.field == "parent_record" %}
+        {%- assign parent_label = "" -%}
+        {%- for parent in parents -%}
+        {% if parent.objectid == page.parent_record %}
+            {%- assign parent_label = parent.pref_label -%}
+        {% endif %}
+        {%- endfor -%}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
-            <a class="me-1" href="{{ page.parent_record | prepend: 'items/' | append: '.html' | absolute_url }}">{{ page.parent_record | prepend: 'items/' | append: '.html' | absolute_url }}</a>
+            <a class="me-1" href="{{ page.parent_record | prepend: 'items/' | append: '.html' | absolute_url }}">{{ parent_label }}</a>
         </dd>
         {% elsif f.field == "vocabulary" %}
         <dt class="field">{{ f.display_name }}:</dt>
