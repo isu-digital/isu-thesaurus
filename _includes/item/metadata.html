@@ -9,7 +9,8 @@
     <dl>
         <dt class="field">URI:</dt>
         <dd class="field-value">
-            <a class="me-3" href="{{ page.objectid | prepend: 'items/' | append: '.html' | absolute_url }}">{{ page.objectid | prepend: 'items/' | append: '.html' | absolute_url }}</a>
+            {%- assign item_uri = page.objectid | prepend: 'items/' | append: '.html' | absolute_url -%}
+            <a class="me-3" href="{{ item_uri }}" style="margin-right: .3rem !important;">{{ item_uri }}</a>{% include feature/copy-button.html text=item_uri label="Copy URI" %}
         </dd>
         {% for f in fields %}{% if page[f.field] %}
         {% if f.field == "vocabulary" %}
@@ -186,6 +187,20 @@
             {% assign index = forloop.index | minus: 1 %}
             <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
+        </dd>
+        {% elsif f.field == "latitude" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {%- assign item_latitude = page.latitude -%}
+            {{ item_latitude }}
+            {% include feature/copy-button.html text=item_latitude label="Copy Latitude" %}
+        </dd>
+        {% elsif f.field == "longitude" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {%- assign item_longitude = page.longitude -%}
+            {{ item_longitude }}
+            {% include feature/copy-button.html text=item_longitude label="Copy Longitude" %}
         </dd>
         {% else %}
         <dt class="field">{{ f.display_name }}:</dt>

@@ -1,0 +1,27 @@
+{%- comment -%}
+    Copy to clipboard button component
+    
+    Parameters:
+    - text: The text to copy to clipboard (required)
+    - label: Accessible label for the button (optional, defaults to "Copy to clipboard")
+    - class: Additional CSS classes (optional)
+    
+    Usage:
+    {% include feature/copy-button.html text="Text to copy" label="Copy URI" %}
+{%- endcomment -%}
+
+{%- assign copy_text = include.text | strip -%}
+{%- assign copy_label = include.label | default: "Copy to clipboard" -%}
+{%- assign copy_class = include.class | default: "" -%}
+
+{%- if copy_text and copy_text != "" -%}
+<button type="button" 
+        class="copy-btn {{ copy_class }}" 
+        data-copy="{{ copy_text | escape }}"
+        title="{{ copy_label | escape }}"
+        aria-label="{{ copy_label | escape }}">
+    <svg class="bi copy-icon" role="img" aria-hidden="true">
+        <use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-copy"/>
+    </svg>
+</button>
+{%- endif -%}
