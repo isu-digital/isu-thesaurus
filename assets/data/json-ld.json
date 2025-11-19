@@ -26,6 +26,7 @@
             "dc:title": {{ item.title | jsonify }},
             "rdf:type": [{% assign term_uris = item.term_type_uri | split: ';' %}{% for t in term_uris %}"{{ t }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
             "dc:identifier": {{ '/items/' | append: item.objectid | append: '.html' | absolute_url | jsonify }},
+            "dc:spatial": {% if page.latitude and page.longitude %}{{ page.latitude | append: ', ' | append: page.longitude | jsonify }}{% else %}""{% endif %},
             "skos:inScheme": "{{ item.vocabulary_uri }}",
             "skos:definition": {{ item.definition | jsonify }},
             "skos:scopeNote": {{ item.usage | jsonify }},
@@ -46,7 +47,17 @@
             "madsrdf:deathDate": "{{ item.death_date }}",
             "madsrdf:hasSource": [{% assign source = item.source | split: ';' %}{% for s in source %}{{ s | jsonify}}{% unless forloop.last %}, {% endunless %}{% endfor %}],
             "dc:publisher": "{{ item.publisher_uri }}",
-            "dc:rights": "{{ item.rights }}"
+            "dc:rights": "{{ item.rights }}",
+            "skos:example": {% if page.rights_statement %}{{ page.rights_statement | jsonify }}{% else %}""{% endif %},
+            "rda:P50301": {% if page.absorbed_organization_objectid %}{{ '/items/' | append: page.absorbed_organization_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
+            "rda:P50302": {% if page.absorbing_organization_objectid %}{{ '/items/' | append: page.absorbing_organization_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
+            "rda:P50232": {% if page.component_of_merger_objectid %}{{ '/items/' | append: page.component_of_merger_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
+            "rda:P50011": {% if page.mergee_objectid %}{{ '/items/' | append: page.mergee_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
+            "rda:P50012": {% if page.predecessor_objectid %}{{ '/items/' | append: page.predecessor_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
+            "rda:P50229": {% if page.predecessor_of_split_objectid %}{{ '/items/' | append: page.predecessor_of_split_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
+            "rda:P50013": {% if page.product_of_merger_objectid %}{{ '/items/' | append: page.product_of_merger_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
+            "rda:P50014": {% if page.product_of_split_objectid %}{{ '/items/' | append: page.product_of_split_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %},
+            "rda:P50016": {% if page.successor_objectid %}{{ '/items/' | append: page.successor_objectid | append: '.html' | absolute_url | jsonify }}{% else %}""{% endif %}
         }{% unless forloop.last %},{% endunless %}
         {% endfor %}
     ]
