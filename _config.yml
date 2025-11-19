@@ -10,7 +10,7 @@
 # site domain, full URL to the production location of your collection
 url: https://digital.lib.iastate.edu # https://digital.lib.iastate.edu
 # path to location on the domain if necessary e.g. /digital/hjccc
-baseurl: /isulv #/vocabs
+baseurl: /isulv # /test/isulv-demo
 # location of code, the full url to your github repository
 source-code: https://github.com/isu-digital/isu-thesaurus
 
