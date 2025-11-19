@@ -1,4 +1,4 @@
-field,display_name,browse_link,external_link,dc_map,schema_map
+field,display_name,browse_link,external_link,dc_map,schema_map,copy_button
 title,Preferred form,,,DCTERMS.title,headline
 alternative_form,Alternative forms,,,,
 term_type,Term type,true,,,
@@ -14,6 +14,9 @@ definition,Definition,,,,
 usage,Usage,,,,
 history,History,,,,
 location,Associated locations,true,,,contentLocation
+latitude,Latitude,,,,,true
+longitude,Longitude,,,,,true
+geodetic_datum,Geodetic Datum
 subject_area,Subject area,true,,,
 broader_term,Broader term,,,,
 narrower_term,Narrower term,,,,

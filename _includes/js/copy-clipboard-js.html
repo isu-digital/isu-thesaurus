@@ -1,0 +1,110 @@
+<script>
+/* copy to clipboard functionality */
+(function() {
+    'use strict';
+    
+    /* create feedback element once */
+    let feedbackElement = null;
+    
+    function createFeedbackElement() {
+        if (!feedbackElement) {
+            feedbackElement = document.createElement('div');
+            feedbackElement.className = 'copy-feedback';
+            feedbackElement.setAttribute('aria-live', 'polite');
+            document.body.appendChild(feedbackElement);
+        }
+        return feedbackElement;
+    }
+    
+    function showFeedback(message, success = true) {
+        const feedback = createFeedbackElement();
+        feedback.textContent = message;
+        feedback.className = success ? 'copy-feedback' : 'copy-feedback copy-error';
+        feedback.classList.add('show');
+        
+        setTimeout(() => {
+            feedback.classList.remove('show');
+        }, 2000);
+    }
+    
+    function copyToClipboard(text, button) {
+        /* modern clipboard api */
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(() => {
+                showFeedback('Copied to clipboard!');
+                highlightButton(button);
+            }).catch(() => {
+                fallbackCopy(text, button);
+            });
+        } else {
+            fallbackCopy(text, button);
+        }
+    }
+    
+    function fallbackCopy(text, button) {
+        /* fallback for older browsers */
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                showFeedback('Copied to clipboard!');
+                highlightButton(button);
+            } else {
+                showFeedback('Copy failed. Please copy manually.', false);
+            }
+        } catch (err) {
+            showFeedback('Copy failed. Please copy manually.', false);
+        }
+        
+        document.body.removeChild(textArea);
+    }
+    
+    function highlightButton(button) {
+        button.classList.add('copied');
+        setTimeout(() => {
+            button.classList.remove('copied');
+        }, 1000);
+    }
+    
+    /* initialize copy buttons when DOM is ready */
+    function initCopyButtons() {
+        const copyButtons = document.querySelectorAll('[data-copy]');
+        
+        copyButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const textToCopy = this.getAttribute('data-copy');
+                copyToClipboard(textToCopy, this);
+            });
+            
+            /* add keyboard support */
+            button.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const textToCopy = this.getAttribute('data-copy');
+                    copyToClipboard(textToCopy, this);
+                }
+            });
+        });
+    }
+    
+    /* initialize when DOM is loaded */
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCopyButtons);
+    } else {
+        initCopyButtons();
+    }
+    
+    /* re-initialize if new copy buttons are added dynamically */
+    window.initCopyButtons = initCopyButtons;
+})();
+</script>
