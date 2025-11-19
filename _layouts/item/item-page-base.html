@@ -5,7 +5,7 @@ layout: default
 # item-meta adds rich meta markup to the page on production build
 item-meta: true
 ---
-{%- assign children = site.data[site.metadata] | where_exp: 'item','item.parent_record == page.objectid' -%}
+{%- assign children = site.data[site.metadata] | where_exp: 'item','item.parent_record contains page.objectid' -%}
 <div class="container py-3">
 
     {% include item/breadcrumbs.html %}

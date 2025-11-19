@@ -18,15 +18,19 @@
         {% endif %}
         {% for f in fields %}{% if page[f.field] and f.field != "usage" %}
         {% if f.field == "parent_record" %}
-        {%- assign parent_label = "" -%}
-        {%- for parent in parents -%}
-        {% if parent.objectid == page.parent_record %}
-            {%- assign parent_label = parent.pref_label -%}
-        {% endif %}
-        {%- endfor -%}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
-            <a class="me-1" href="{{ page.parent_record | prepend: 'items/' | append: '.html' | absolute_url }}">{{ parent_label }}</a>
+            {% assign parent_records = page.parent_record | split: ";" %}
+            {% for parent_id in parent_records %}
+                {%- assign parent_label = "" -%}
+                {%- for parent in parents -%}
+                    {% if parent.objectid == parent_id %}
+                        {%- assign parent_label = parent.pref_label -%}
+                        {% break %}
+                    {% endif %}
+                {%- endfor -%}
+                <a class="me-1" href="{{ parent_id | strip | prepend: 'items/' | append: '.html' | absolute_url }}">{{ parent_label }}</a>
+            {% endfor %}
         </dd>
         {% elsif f.field == "vocabulary" %}
         <dt class="field">{{ f.display_name }}:</dt>
