@@ -124,6 +124,8 @@ In the Iowa State vocabularies, each term can be described by triples made up of
     </div>
 </div>
 
+__Note:__ The Geodetic Datum element is displayed when an item's metadata includes latitude and longitude. This element indicates the system used for representing geographic coordinates—for example, WGS 84 (World Geodetic System 1984). Geodetic Datum is not included as a property in ISULV's JSON-LD knowledge graph and so is not listed in the table above. 
+
 ## Acknowledgments
 
 The Metadata Services librarians at Iowa State University Library (Heather Campbell, Christopher Dieckman, Kelly Hyland, Sylvie Manuel, Nausicaa Rose, and Hema Thulsidhos) are grateful to all our colleagues who contributed to the development of this project. Our former department head, Harriet Wintermute, proposed the idea of a local linked data vocabulary. Olivia Wikle tapped her CollectionBuilder expertise to bring it to fruition. The ISU Thesaurus Working Group developed a local collection of subject terms, and Amy Bishop, Rosalie Gartner, and Laura Sullivan provided recommendations. Lenard Kluck launched our names vocabulary by extracting and organizing data from our digital collections. Haylee Sheppard designed a brilliant banner illustration. Nausicaa Rose built a nifty [reconciliation service](https://github.com/isu-meta/isulv-reconcile). Chris Dieckman and Kelly Hyland designed a data model for polyonymous academic departments. Hema Thulsidhos compiled rights statements and accessibility terms. Colleagues in Oklahoma (Megan Macken, Lulu Zilinskas, and Kaitlyn Palone) shared inspiration and interlinking opportunities through the [Tribal Nations in Oklahoma Metadata](https://oms.library.okstate.edu/s/tribal-nations-metadata/page/home) website.
