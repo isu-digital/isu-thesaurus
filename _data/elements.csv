@@ -13,9 +13,12 @@ Birth date,http://www.loc.gov/mads/rdf/v1#birthDate,Year when the person represe
 Death date,http://www.loc.gov/mads/rdf/v1#deathDate,Year when the person represented by the term died.
 Definition,http://www.w3.org/2004/02/skos/core#definition,Explanatory or contextual information about the term.
 Usage,http://www.w3.org/2004/02/skos/core#scopeNote,Notes on how and when the term should be applied.
-History,http://www.w3.org/2004/02/skos/core#historyNote,"Outreach and approval status and dates, or other notes about changes made to the term."
+History,http://www.w3.org/2004/02/skos/core#historyNote,"Information about the term's origin, outreach and approval status and dates, or other notes about changes made to the term."
 Associated locations,http://www.loc.gov/mads/rdf/v1#associatedLocale,Geographic locations associated with the term.
-Subject area,http://purl.org/dc/elements/1.1/subject,Topical categories for grouping related terms.
+Latitude,http://purl.org/dc/terms/spatial,The latitude of a place represented by a geographic authority.
+Longitude,http://purl.org/dc/terms/spatial,The longitude of a place represented by a geographic authority.
+Geodetic Datum,Not included in ISULV's JSON-LD knowledge graph. A constant literal value (WGS 84) populates the displayed element when an item has coordinates.,The system used for representing geographic coordinates. Latitude and longitude values in ISULV follow the World Geodetic System 1984 (WGS 84).
+Subject area,http://purl.org/dc/terms/subject,Topical categories for grouping related terms.
 Broader term,http://www.w3.org/2004/02/skos/core#broader,Broader or more general terms in the vocabulary hierarchy.
 Narrower term,http://www.w3.org/2004/02/skos/core#narrower,Narrower or more specific terms in the vocabulary hierarchy.
 Related terms,http://www.w3.org/2004/02/skos/core#related,Terms in the local vocabulary that should be assigned together or reviewed to ensure the best selection.
@@ -34,5 +37,4 @@ Related term in external vocabulary,http://www.w3.org/2004/02/skos/core#related,
 Identifiers,http://www.w3.org/2004/02/skos/core#exactMatch,"Identifiers for the entity found in external schemes such as <a href=""https://www.wikidata.org/"">Wikidata</a> and <a href=""https://orcid.org/"">ORCID</a>."
 Source,http://www.loc.gov/mads/rdf/v1#hasSource,Name or website of the source for the preferred term.
 Publisher,http://purl.org/dc/terms/publisher,"Entity responsible for making the term available. For locally preferred terms, the publisher is Iowa State University Library; for terms selected from an external vocabulary, the publisher is the agency that maintains the vocabulary."
-
 Rights,http://purl.org/dc/terms/rights,"Information about rights held in and over the contents of the item page, which is metadata about the vocabulary term. This website uses the Open Data Commons Public Domain Dedication and Licence (PDDL), which allows free sharing, modification, and use of this metadata for any purpose and without any restrictions."
