@@ -4,8 +4,8 @@ alternative_form,Alternative forms,,,,
 term_type,Term type,true,,,
 vocabulary,Vocabulary,,,,
 language,Language of term,,,,
-rights_statement,Local rights statement,,,,
-rights_statement_uri,Standard rights statement URI,,,,
+rights_statement,Local rights statement,,,,,true
+rights_statement_uri,Standard rights statement URI,,,,,true
 establish_date,Start date,,,,
 terminate_date,End date,,,,
 birth_date,Birth date,,,,
