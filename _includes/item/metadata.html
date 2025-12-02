@@ -188,6 +188,20 @@
             <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
+        {% elsif f.field == "rights_statement" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {%- assign item_rights_statement = page.rights_statement -%}
+            {{ item_rights_statement }}
+            {% include feature/copy-button.html text=item_rights_statement label="Copy Statement" %}
+        </dd>
+        {% elsif f.field == "rights_statement_uri" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {%- assign item_rights_statement_uri = page.rights_statement_uri -%}
+            {{ item_rights_statement_uri }}
+            {% include feature/copy-button.html text=item_rights_statement_uri label="Copy URI" %}
+        </dd>
         {% elsif f.field == "latitude" %}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
