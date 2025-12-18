@@ -1,5 +1,5 @@
 field,display_name,browse_link,external_link,dc_map,schema_map,copy_button
-title,Preferred form,,,DCTERMS.title,headline
+title,Preferred form,,,DCTERMS.title,headline,true
 alternative_form,Alternative forms,,,,
 term_type,Term type,true,,,
 vocabulary,Vocabulary,,,,
