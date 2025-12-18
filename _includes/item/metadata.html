@@ -188,6 +188,13 @@
             <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
+        {% elsif f.field == "title" %}
+        <dt class="field">{{ f.display_name }}:</dt>
+        <dd class="field-value">
+            {%- assign item_title = page.title -%}
+            {{ item_title }}
+            {% include feature/copy-button.html text=item_title label="Copy Label" %}
+        </dd>
         {% elsif f.field == "rights_statement" %}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
