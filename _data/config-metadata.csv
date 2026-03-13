@@ -18,6 +18,7 @@ latitude,Latitude,,,,,true
 longitude,Longitude,,,,,true
 geodetic_datum,Geodetic Datum
 subject_area,Subject area,true,,,
+parent_record,Parent Term,
 broader_term,Broader term,,,,
 narrower_term,Narrower term,,,,
 related_term,Related terms,,,,

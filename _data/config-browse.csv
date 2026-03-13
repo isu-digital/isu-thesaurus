@@ -10,3 +10,5 @@ location,,,true
 term_type,Term type,true
 vocabulary,Vocabulary,true
 publisher,Publisher,true
+usage,,,
+display_template,,,true

@@ -3,6 +3,12 @@
 <script src="{{ '/assets/lib/lunr.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/lunr-store.js' | relative_url }}"></script>
 <script>
+var displayNames = {
+  {% for f in fields %}
+    {{ f.field | jsonify }}: {{ f.display_name | jsonify }}{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+};
+
 /* initialize lunr */
 var idx = lunr(function () {
   /* add index fields from config */
@@ -57,7 +63,7 @@ function lunr_search () {
             '<p class="ms-3">';
               {% else %}
               if(store[ref][{{ d.field | jsonify }}]) {
-                searchitem += store[ref][{{ d.field | jsonify }}] + '<br> '; }
+                searchitem += "<strong>" + displayNames[{{ d.field | jsonify }}] + ":</strong> " + store[ref][{{ d.field | jsonify }}] + '<br> '; }
               {% endif %}{% endfor %}
               searchitem += '</p></td>' +
       '</tr>';

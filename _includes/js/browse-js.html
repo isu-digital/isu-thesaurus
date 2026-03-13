@@ -54,6 +54,7 @@ function makeCard(obj) {
     card += '<p class="card-text">';
     {% for f in fields %}{% unless f.hidden == 'true' %}
     if(obj[{{ f.field | jsonify }}]){
+    {% if f.field == "usage" %} card += '<div class="text-center"><p class="h2">' + obj["usage"] + '</p></div>'{% endif %}
     {% if f.display_name %}card += '<strong>{{ f.display_name }}:</strong> ';{% endif %}
     {% if f.btn == 'true' %}
     var btns = obj[{{ f.field | jsonify }}].split(";");
@@ -63,7 +64,9 @@ function makeCard(obj) {
         }
     }
     {% else %}
+    {% unless f.field == "usage" %}
     card += obj[{{ f.field | jsonify }}];
+    {% endunless %}
     {% endif %}
     {% unless forloop.last %}card += '<br>';{% endunless %}
     }
