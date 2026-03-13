@@ -155,7 +155,8 @@
             {% assign term_uris = page.mergee_objectid | split: ";" %}
             {% for t in terms %}
             {% assign index = forloop.index | minus: 1 %}
-            <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
+            {% assign clean_uri = term_uris[index] | strip %}
+            <a class="me-1" href="{{ '/items/' | append: clean_uri | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
         {% elsif f.field == "predecessor" %}
@@ -165,6 +166,7 @@
             {% assign term_uris = page.predecessor_objectid | split: ";" %}
             {% for t in terms %}
             {% assign index = forloop.index | minus: 1 %}
+            {% assign clean_uri = term_uris[index] | strip %}
             <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
@@ -175,6 +177,7 @@
             {% assign term_uris = page.predecessor_of_split_objectid | split: ";" %}
             {% for t in terms %}
             {% assign index = forloop.index | minus: 1 %}
+            {% assign clean_uri = term_uris[index] | strip %}
             <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
@@ -185,6 +188,7 @@
             {% assign term_uris = page.product_of_merger_objectid | split: ";" %}
             {% for t in terms %}
             {% assign index = forloop.index | minus: 1 %}
+            {% assign clean_uri = term_uris[index] | strip %}
             <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
@@ -195,6 +199,7 @@
             {% assign term_uris = page.product_of_split_objectid | split: ";" %}
             {% for t in terms %}
             {% assign index = forloop.index | minus: 1 %}
+            {% assign clean_uri = term_uris[index] | strip %}
             <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
@@ -205,6 +210,7 @@
             {% assign term_uris = page.successor_objectid | split: ";" %}
             {% for t in terms %}
             {% assign index = forloop.index | minus: 1 %}
+            {% assign clean_uri = term_uris[index] | strip %}
             <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
