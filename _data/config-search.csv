@@ -1,12 +1,10 @@
 field,index,display,display_name
 title,TRUE,TRUE,Title
-pref_label,TRUE,TRUE,Preferred label
+pref_label,TRUE,FALSE,Preferred label
 objectid,TRUE,TRUE,objectid
 alternative_form,TRUE,TRUE,Alternative form
 establish_date,TRUE,TRUE,Start date
 terminate_date,TRUE,TRUE,End date
-source,TRUE,TRUE,Source
-publisher,TRUE,TRUE,Publisher
 usage,TRUE,TRUE,Usage
 subject_area,TRUE,FALSE,Subject area
 source,TRUE,FALSE,Source
