@@ -1,9 +1,15 @@
 field,index,display,display_name
-title,true,true,Title
-pref_label,true,true,Preferred Label
-objectid,true,true,objectid
-alternative_form,true,true,Alternative Form
-establish_date,true,true,Start Date
-terminate_date,true,true,End Date
-source,true,true,Source
-publisher,true,true,Publisher
+title,TRUE,TRUE,Title
+pref_label,TRUE,TRUE,Preferred label
+objectid,TRUE,TRUE,objectid
+alternative_form,TRUE,TRUE,Alternative form
+establish_date,TRUE,TRUE,Start date
+terminate_date,TRUE,TRUE,End date
+source,TRUE,TRUE,Source
+publisher,TRUE,TRUE,Publisher
+usage,TRUE,TRUE,Usage
+subject_area,TRUE,FALSE,Subject area
+source,TRUE,FALSE,Source
+exact_match_uri,TRUE,TRUE,Exact match in external vocabulary
+close_match_uri,TRUE,TRUE,Close match in external vocabulary
+identifier_uri,TRUE,TRUE,Identifiers
