@@ -1,13 +1,13 @@
 field,index,display,display_name
-title,TRUE,TRUE,Title
-pref_label,TRUE,FALSE,Preferred label
-objectid,TRUE,TRUE,objectid
-alternative_form,TRUE,TRUE,Alternative form
-establish_date,TRUE,TRUE,Start date
-terminate_date,TRUE,TRUE,End date
-usage,TRUE,TRUE,Usage
-subject_area,TRUE,FALSE,Subject area
-source,TRUE,FALSE,Source
-exact_match_uri,TRUE,TRUE,Exact match in external vocabulary
-close_match_uri,TRUE,TRUE,Close match in external vocabulary
-identifier_uri,TRUE,TRUE,Identifiers
+title,true,true,Title
+pref_label,true,false,Preferred label
+objectid,true,true,objectid
+alternative_form,true,true,Alternative form
+establish_date,true,true,Start date
+terminate_date,true,true,End date
+usage,true,true,Usage
+subject_area,true,false,Subject area
+source,true,false,Source
+exact_match_uri,true,true,Exact match in external vocabulary
+close_match_uri,true,true,Close match in external vocabulary
+identifier_uri,true,true,Identifiers
