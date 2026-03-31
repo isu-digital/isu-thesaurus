@@ -8,16 +8,12 @@
 {%- assign parents = site.data[site.metadata] | where_exp: 'item', 'item.parent_record == nil' -%}
 <div id="item-metadata">
     <dl>
-        {% if page.usage and page.display_template == "parent" %}
-        <p class="h3 pb-4"><u>{{ page.usage }}</u></p>
-        {% else %}
         <dt class="field">URI:</dt>
         <dd class="field-value">
             {%- assign item_uri = page.objectid | prepend: 'items/' | append: '.html' | absolute_url -%}
             <a class="me-3" href="{{ item_uri }}" style="margin-right: .3rem !important;">{{ item_uri }}</a>{% include feature/copy-button.html text=item_uri label="Copy URI" %}
         </dd>
-        {% endif %}
-        {% for f in fields %}{% if page[f.field] and f.field != "usage" %}
+        {% for f in fields %}{% if page[f.field] %}
         {% if f.field == "parent_record" %}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
