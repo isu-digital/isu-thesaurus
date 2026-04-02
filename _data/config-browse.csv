@@ -1,6 +1,6 @@
-field,display_name,btn,hidden,sort_name
+field,display_name,btn,hidden,sort_name,browse_facet,facet_name
 alternative_form,Alternative forms
-subject_area,Subject area,true
+subject_area,Subject area,true,,,,Subject Area
 broader_term,Broader term,true
 narrower_term,Narrower term,true
 related_term,Related terms,true
@@ -11,4 +11,3 @@ term_type,Term type,true
 vocabulary,Vocabulary,true
 publisher,Publisher,true
 usage,,,
-display_template,,,true
