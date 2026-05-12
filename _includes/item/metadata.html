@@ -22,7 +22,7 @@
                 {%- assign parent_label = "" -%}
                 {%- for parent in parents -%}
                     {% if parent.objectid == parent_id %}
-                        {%- assign parent_label = parent.pref_label -%}
+                        {%- assign parent_label = parent.title -%}
                         {% break %}
                     {% endif %}
                 {%- endfor -%}
@@ -210,12 +210,12 @@
             <a class="me-1" href="{{ '/items/' | append: term_uris[index] | append: '.html' | absolute_url }}">{{ t | strip }}</a>
             {% endfor %}
         </dd>
-        {% elsif f.field == "title" %}
+        {% elsif f.field == "pref_label" %}
         <dt class="field">{{ f.display_name }}:</dt>
         <dd class="field-value">
-            {%- assign item_title = page.title -%}
-            {{ item_title }}
-            {% include feature/copy-button.html text=item_title label="Copy Label" %}
+            {%- assign item_pref_label = page.pref_label -%}
+            {{ item_pref_label }}
+            {% include feature/copy-button.html text=item_pref_label label="Copy Label" %}
         </dd>
         {% elsif f.field == "rights_statement" %}
         <dt class="field">{{ f.display_name }}:</dt>
